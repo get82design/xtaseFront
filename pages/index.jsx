@@ -75,7 +75,7 @@ const Home = ({ home }) => {
   )
 }
 
-export const getServerSideProps = async ({ locale }) => {
+export const getStaticProps = async ({ locale }) => {
   // Run API calls in parallel
   const [ homepageRes] = await Promise.all([
     fetchAPI(`/homepage`, {
