@@ -51,25 +51,28 @@ const Home = ({ seo, locale }) => {
         p={8}
         bgGradient="radial(#061B61, #0C0023 60%)"
       ></Flex>
-      
-      <HomeHeading data={data?.attributes} />
-      
-      {/* BgVideo */}
-      <VideoSection data={data?.attributes} />
+      {data &&
+      <>
+        <HomeHeading data={data?.attributes} />
+        
+        {/* BgVideo */}
+        <VideoSection data={data?.attributes} />
 
-      <Concept data={data?.attributes} />
+        <Concept data={data?.attributes} />
 
-      {/* En Images */}
-      <EnImagesSection data={data?.attributes} />
+        {/* En Images */}
+        <EnImagesSection data={data?.attributes} />
 
-      {/* LISTS */}
-      <ListHomeList data={data?.attributes} locale={locale} />
+        {/* LISTS */}
+        <ListHomeList data={data?.attributes} locale={locale} />
 
-      {/* MapAndContact */}
-      <MapAndContact locale={locale} />
+        {/* MapAndContact */}
+        <MapAndContact locale={locale} />
 
-      {/* Card BY LUXURIA */}
-      <ByLuxuriaCard locale={locale} />
+        {/* Card BY LUXURIA */}
+        <ByLuxuriaCard locale={locale} />
+      </>
+      }
 
     </>
   )
