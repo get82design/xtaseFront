@@ -32,7 +32,7 @@ export const Nav = () => {
     const router = useRouter()
     const locale = router.locale
     console.log(locale)
-    const urlReservation = useContext(GlobalContext);
+    const { urlReservation } = useContext(GlobalContext);
     const { setOpenDialog } = useDialogContext()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { data } = useGetNavLinks(locale)
