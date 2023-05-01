@@ -34,7 +34,7 @@ const ByLuxuria = ({ seo, locale }) => {
     )
 }
 
-export async function getServerSideProps({ locale }) {
+export const getServerSideProps = async({ locale }) => {
   // Run API calls in parallel
   const [ byLuxuriaRes] = await Promise.all([
     fetchAPI("/by-luxuria-page", {

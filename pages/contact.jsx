@@ -59,7 +59,7 @@ export const Contact = ({ seo, locale }) => {
   )
 } 
 
-export async function getServerSideProps({locale}) {
+export const getServerSideProps = async ({locale}) => {
   // Run API calls in parallel
   const [contactRes] = await Promise.all([
     fetchAPI("/contact-page", {

@@ -2,15 +2,8 @@ import { fetchAPI } from "./../../lib/api"
 
 export const getGlobal = () => {
     return fetchAPI("/global", {
-    populate:
-    {
-      favicon: "*",
-      defaultSeo: {
-        populate: "*",
-      },
-      logo: "*"
-    },
-  });
+        populate: "*"
+    }).then((response) => response.data);
 }
 
 export const getNavLinks = (locale) => {
