@@ -13,9 +13,14 @@ import {
     getModal,
     getNavLinks,
     getSocials,
-    getContactPage
+    getContactPage,
+    getGlobal
 } from "./../pages/api/session"
 import { useQuery } from "react-query"
+
+export const useGetGlobal = () => {
+    return useQuery(['getGlobal'], () => getGlobal())
+}
 
 export const useGetNavLinks = (locale) => {
     return useQuery([`getNavLinks${locale}`], () => getNavLinks(locale))

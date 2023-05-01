@@ -7,7 +7,8 @@ export const getGlobal = () => {
       favicon: "*",
       defaultSeo: {
         populate: "*",
-      }
+      },
+      logo: "*"
     },
   });
 }
