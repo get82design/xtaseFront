@@ -1,4 +1,4 @@
-import { fetchAPI, fetchAPIWithoutLocale } from './../lib/api';
+import { fetchAPI } from './../lib/api';
 import { getStrapiMedia } from './../lib/media';
 import '../styles/globals.css'
 import App from "next/app";
