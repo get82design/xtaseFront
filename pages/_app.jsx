@@ -66,7 +66,7 @@ const MyApp = ({ Component, pageProps }) => {
 // https://github.com/vercel/next.js/discussions/10949
 MyApp.getInitialProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getInitialProps(ctx);
+  // const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
   const globalRes = await fetchAPI("/global", {
     populate:
@@ -79,7 +79,7 @@ MyApp.getInitialProps = async (ctx) => {
     },
   });
   // Pass the data to our page via props
-  return { ...appProps, pageProps: { global: globalRes.data } };
+  return { pageProps: { global: globalRes.data } };
 };
 
 export default appWithTranslation(MyApp);
