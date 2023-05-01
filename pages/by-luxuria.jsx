@@ -49,7 +49,7 @@ export async function getServerSideProps({ locale }) {
       seo: byLuxuriaRes.data.attributes.seo,
       locale: locale
     },
-    revalidate: 1,
+    // revalidate: 1,
   };
 }
 
