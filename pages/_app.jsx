@@ -68,16 +68,18 @@ MyApp.getInitialProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   // const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
-  const globalRes = await fetchAPI("/global", {
-    populate:
-    {
-      favicon: "*",
-      defaultSeo: {
-        populate: "*",
-      },
-      logo: "*"
-    },
-  });
+  // const globalRes = await fetchAPI("/global", {
+  //   populate:
+  //   {
+  //     favicon: "*",
+  //     defaultSeo: {
+  //       populate: "*",
+  //     },
+  //     logo: "*"
+  //   },
+  // });
+  const res = await fetch('https://seal-app-ka6lw.ondigitalocean.app/api/global')
+  const globalRes = await res.json()
   // Pass the data to our page via props
   return { pageProps: { global: globalRes.data } };
 };
