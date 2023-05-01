@@ -185,7 +185,7 @@ const EnImages = ({ seo, locale }) => {
     )
 }
 
-export async function getStaticProps({locale}) {
+export async function getServerSideProps({locale}) {
   // Run API calls in parallel
   const [enImagesRes] = await Promise.all([
     fetchAPI("/en-images-page", {
