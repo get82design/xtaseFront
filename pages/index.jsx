@@ -13,21 +13,20 @@ import { ListHomeList } from '../components/List/ListHomeList'
 import { EnImagesSection } from '../components/Section/EnImagesSection'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { VideoSection } from '../components/Section/VideoSection'
 
 const MotionHeading = motion(Heading)
 const MotionBox = motion(Box)
 
-const Home = ({ home }) => {
-  const router = useRouter()
-  const [locale, setLocale] = useState(router?.locale)
-  const [datas, setDatas] = useState()
-  const { error, isLoading, data } = useGetHomepage(locale)
+const Home = ({ seo, locale }) => {
+  const [localeInView, setLocaleInView] = useState(null)
+  const { error, isLoading, data } = useGetHomepage(localeInView)
 
   useEffect(() => {
-    if (router.locale && data) {
-      setDatas(data)
+    if (locale) {
+      setLocaleInView(locale)
     }
-  }, [router.locale, data])
+  }, [locale])
 
   if (isLoading) {
     return (
@@ -37,11 +36,11 @@ const Home = ({ home }) => {
     )
   }
 
-  console.log('home', home)
+  console.log('home', seo, data, locale)
   return (
     <>
       {/* SEO */}
-      <Seo seo={home?.seo} />
+      <Seo seo={seo} />
 
       {/*Mini Header */}
       <Flex
@@ -53,40 +52,45 @@ const Home = ({ home }) => {
         bgGradient="radial(#061B61, #0C0023 60%)"
       ></Flex>
       
-      <HomeHeading data={home} />
+      <HomeHeading data={data?.attributes} />
       
       {/* BgVideo */}
+      <VideoSection data={data?.attributes} />
 
-      <Concept data={home} />
+      <Concept data={data?.attributes} />
 
       {/* En Images */}
-      <EnImagesSection data={home} />
+      <EnImagesSection data={data?.attributes} />
 
       {/* LISTS */}
-      <ListHomeList data={home} />
+      <ListHomeList data={data?.attributes} locale={locale} />
 
       {/* MapAndContact */}
-      {/* <MapAndContact /> */}
+      <MapAndContact locale={locale} />
 
       {/* Card BY LUXURIA */}
-      {/* <ByLuxuriaCard /> */}
+      <ByLuxuriaCard locale={locale} />
 
     </>
   )
 }
 
-export const getStaticProps = async ({ locale }) => {
+export const getServerSideProps = async ({ locale }) => {
   // Run API calls in parallel
   const [ homepageRes] = await Promise.all([
     fetchAPI(`/homepage`, {
-      populate: "*",
-      // locale:locale
-    }),
+      // populate: "*",
+      populate: {
+        seo: { populate: "*" },
+      },
+    }, locale),
   ]);
 
   return {
     props: {
-      home: homepageRes.data.attributes,
+      // home: homepageRes.data.attributes,
+      seo: homepageRes.data.attributes.seo,
+      locale: locale
       // ...await serverSideTranslations(locale, ['common']),
     },
     // revalidate: 1,

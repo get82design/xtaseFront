@@ -1,17 +1,19 @@
 import { useGetNavLinks, useGetSocials } from "./../../hook/hook"
 import { Flex, SimpleGrid, Stack, Text } from "@chakra-ui/react"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
-export const Footer = ({ copyright }) => {
+export const Footer = ({ locale }) => {
     const { data: dataSocials } = useGetSocials()
     const socials = dataSocials || []
-    const { data: dataNavLinks } = useGetNavLinks()
+    const { data: dataNavLinks } = useGetNavLinks(locale)
     const navLinks = dataNavLinks || []
     const [pageActive, setPageActive] = useState("")
 
     useEffect(() => {
         var urlcourante = window.location.pathname; 
+        console.log('url', urlcourante)
         setPageActive(urlcourante)
     }, [])
     return (
@@ -26,7 +28,7 @@ export const Footer = ({ copyright }) => {
         >
             <SimpleGrid
                 align="center"
-                columns={3}
+                columns={locale && locale !== "fr-FR" ? 4 : 3}
                 py={6}
                 w='100%'
                 color='white'
@@ -71,7 +73,7 @@ export const Footer = ({ copyright }) => {
                 py={6}
                 borderTop="1px solid rgba(255,255,255, 0.5)"
             >
-                <Text color='white' fontSize={{base:'sm', md:"md"}}>{copyright}</Text>
+                <Text color='white' fontSize={{base:'sm', md:"md"}}>{(locale && locale !== 'fr-FR') ? "© Copyright 2023 All rights reserved." : "© Copyright 2023 Tous droits réservés."}</Text>
             </Flex>
         </Stack>
     )

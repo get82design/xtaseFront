@@ -12,8 +12,10 @@ export const getGlobal = () => {
   });
 }
 
-export const getNavLinks = () => {
-    return fetchAPI("/nav-links").then((response) => response.data)
+export const getNavLinks = (locale) => {
+    return fetchAPI("/nav-links", {
+        populate: "*"
+    }, locale).then((response) => response.data)
 }
 
 export const getSocials = () => {
@@ -21,14 +23,13 @@ export const getSocials = () => {
 }
 
 // Je ne reçois pas la photo... Trouver pourquoi ???????
-export const getHomePage = () => {
+export const getHomePage = (locale) => {
     return fetchAPI(`/homepage`, {
-        // locale: locale,
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getByLuxuriaPage = () => {
+export const getByLuxuriaPage = (locale) => {
     return fetchAPI('/by-luxuria-page', {
         populate: {
             backgroundVideo: "*",
@@ -45,52 +46,52 @@ export const getByLuxuriaPage = () => {
                 populate: "*"
             }
         }
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getEnImagesPage = () => {
+export const getEnImagesPage = (locale) => {
     return fetchAPI('/en-images-page', {
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getContactPage = () => {
+export const getContactPage = (locale) => {
     return fetchAPI('/contact-page', {
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getGalerieChambre = () => {
+export const getGalerieChambre = (locale) => {
     return fetchAPI('/galerie-chambres', {
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getGalerieSalon = () => {
+export const getGalerieSalon = (locale) => {
     return fetchAPI('/galerie-salons', {
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getGalerieSalleDeBain = () => {
+export const getGalerieSalleDeBain = (locale) => {
     return fetchAPI('/galerie-salle-de-bains', {
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getGalerieCuisine = () => {
+export const getGalerieCuisine = (locale) => {
     return fetchAPI('/galerie-cuisines', {
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getModal = () => {
+export const getModal = (locale) => {
     return fetchAPI('/modal', {
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getListJeuxItems = () => {
+export const getListJeuxItems = (locale) => {
     return fetchAPI('/jeux-items', {
         populate: {
             label: "*",
@@ -98,10 +99,10 @@ export const getListJeuxItems = () => {
                 populate: "*"
             }
         }
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getListSituationItems = () => {
+export const getListSituationItems = (locale) => {
     return fetchAPI('/situation-items', {
         populate: {
             label: "*",
@@ -109,17 +110,17 @@ export const getListSituationItems = () => {
                 populate: "*"
             }
         }
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getMapAndContact = () => {
+export const getMapAndContact = (locale) => {
     return fetchAPI('/map-and-contact', {
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }
 
-export const getCardByLuxuria = () => {
+export const getCardByLuxuria = (locale) => {
     return fetchAPI('/card-by-luxuria', {
         populate: "*"
-    }).then((response) => response.data)
+    }, locale).then((response) => response.data)
 }

@@ -5,12 +5,12 @@ import { useGetListJeuxItems, useGetListSituationItems } from "../../hook/hook"
 import { HomeList } from "./HomeList"
 
 const MotionBox = motion(Box)
-export const ListHomeList = ({ data }) => {
+export const ListHomeList = ({ data, locale }) => {
     const [isJeux, setIsJeux] = useState(null)
     const [isSituations, setIsSituations] = useState(null)
-    const { data: listJeuxItems } = useGetListJeuxItems(true)
+    const { data: listJeuxItems } = useGetListJeuxItems(true, locale)
     const listJeux = listJeuxItems || []
-    const { data: listSituationItems } = useGetListSituationItems(true)
+    const { data: listSituationItems } = useGetListSituationItems(true, locale)
     const listSituation = listSituationItems || []
 
     useEffect(() => {

@@ -5,14 +5,15 @@ import { Footer } from "../Footer/Footer";
 import { Nav } from "../Nav/Nav"
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useTranslation } from "next-i18next"
+// import { useTranslation } from "next-i18next"
 
 const MotionImg = motion(Img)
 export const Layout = ({ children, logo, copyright }) => {
     const [isActive, setIsActive] = useState('')
     const router = useRouter()
+    const locale = router.locale
     const location = router.asPath
-    const { t } = useTranslation('common')
+    // const { t } = useTranslation('common')
 
     useEffect(() => {
         const handleScroll = (event) => {
@@ -60,17 +61,17 @@ export const Layout = ({ children, logo, copyright }) => {
                 />
             </Flex>
             <Nav />
-            <Box zIndex="1000" position="fixed" top="4" right="4" color="white">
+            <Box zIndex="2000" position="fixed" top="4" right="4" color="white">
                 <Link
                     href={location}
                     locale={router.locale === 'en' ? 'fr-FR' : 'en'}>
                     <Box color={'white'} cursor="pointer">
-                        {router.locale === 'en' ? 'ENG' : 'FR'}
+                        {router.locale === 'en' ? 'FR' : 'ENG'}
                     </Box>
                 </Link>
             </Box>
             {children}
-            <Footer copyright={copyright} />
+            <Footer locale={locale} />
         </Box>
     )
 }

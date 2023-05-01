@@ -17,62 +17,62 @@ import {
 } from "./../pages/api/session"
 import { useQuery } from "react-query"
 
-export const useGetNavLinks = (enabled) => {
-    return useQuery(['getNavLinks'], () => getNavLinks(), { enabled })
+export const useGetNavLinks = (locale) => {
+    return useQuery([`getNavLinks${locale}`], () => getNavLinks(locale))
 }
 
 export const useGetSocials = () => {
     return useQuery(['getSocials'], () => getSocials())
 }
 
-export const useGetHomepage = () => {
-    return useQuery([`getHomepage`], () => getHomePage())
+export const useGetHomepage = (locale) => {
+    return useQuery([`getHomepage${locale}`], () => getHomePage(locale))
 }
 
-export const useGetByLuxuriaPage = () => {
-    return useQuery(['getByLuxuriaPage'], () => getByLuxuriaPage())
+export const useGetByLuxuriaPage = (locale) => {
+    return useQuery([`getByLuxuriaPage${locale}`], () => getByLuxuriaPage(locale))
 }
 
-export const useGetEnImagesPage = () => {
-    return useQuery(['getEnImagesPage'], () => getEnImagesPage())
+export const useGetEnImagesPage = (locale) => {
+    return useQuery([`getEnImagesPage${locale}`], () => getEnImagesPage(locale))
 }
 
-export const useGetContactPage = () => {
-    return useQuery(['getContactPage'], () => getContactPage())
+export const useGetContactPage = (locale) => {
+    return useQuery([`getContactPage${locale}`], () => getContactPage(locale))
 }
 
-export const useGetGalerieChambre = (enabled) => {
-    return useQuery(['getGalerieChambre'], () => getGalerieChambre(), { enabled })
+export const useGetGalerieChambre = (enabled, locale) => {
+    return useQuery([`getGalerieChambre${locale}`], () => getGalerieChambre(locale), { enabled })
 }
 
-export const useGetGalerieSalon = (enabled) => {
-    return useQuery(['getGalerieSalon'], () => getGalerieSalon(), { enabled })
+export const useGetGalerieSalon = (enabled, locale) => {
+    return useQuery([`getGalerieSalon${locale}`], () => getGalerieSalon(locale), { enabled })
 }
 
-export const useGetGalerieSalleDeBain = (enabled) => {
-    return useQuery(['getGalerieSalleDeBain'], () => getGalerieSalleDeBain(), { enabled })
+export const useGetGalerieSalleDeBain = (enabled, locale) => {
+    return useQuery([`getGalerieSalleDeBain${locale}`], () => getGalerieSalleDeBain(locale), { enabled })
 }
 
-export const useGetGalerieCuisine = (enabled) => {
-    return useQuery(['getGalerieCuisine'], () => getGalerieCuisine(), { enabled })
+export const useGetGalerieCuisine = (enabled, locale) => {
+    return useQuery([`getGalerieCuisine${locale}`], () => getGalerieCuisine(locale), { enabled })
 }
 
-export const useGetModal = (enabled) => {
-    return useQuery(['getModal'], () => getModal(), {enabled})
+export const useGetModal = (enabled, locale) => {
+    return useQuery([`getModal${locale}`], () => getModal(locale), {enabled})
 }
 
-export const useGetListJeuxItems = (enabled) => {
-    return useQuery(['getListJeuxItems'], () => getListJeuxItems(), { enabled })
+export const useGetListJeuxItems = (enabled, locale) => {
+    return useQuery([`getListJeuxItems${locale}`], () => getListJeuxItems(locale), { enabled })
 }
 
-export const useGetListSituationItems = (enabled) => {
-    return useQuery(['getListSituationItems'], () => getListSituationItems(), { enabled })
+export const useGetListSituationItems = (enabled, locale) => {
+    return useQuery([`getListSituationItems${locale}`], () => getListSituationItems(locale), { enabled })
 }
 
-export const useGetMapAndContact = () => {
-    return useQuery(['getMapAndContact'], () => getMapAndContact())
+export const useGetMapAndContact = (locale) => {
+    return useQuery([`getMapAndContact${locale}`], () => getMapAndContact(locale))
 }
 
-export const useGetCardByLuxuria = () => {
-    return useQuery(['getCardByLuxuria'], () => getCardByLuxuria())
+export const useGetCardByLuxuria = (locale) => {
+    return useQuery([`getCardByLuxuria${locale}`], () => getCardByLuxuria(locale))
 }

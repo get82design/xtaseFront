@@ -13,32 +13,32 @@ import {
 } from "../hook/hook";
 import { fetchAPI } from "../lib/api";
 
-const EnImages = ({ seo }) => {
+const EnImages = ({ seo, locale }) => {
     const [loadChambre, setLoadChambre] = useState(true)
     const [loadSalon, setLoadSalon] = useState(false)
     const [loadSalleDeBain, setLoadSalleDeBain] = useState(false)
     const [loadCuisine, setLoadCuisine] = useState(false)
-    const { error, isLoading, data } = useGetEnImagesPage()
+    const { error, isLoading, data } = useGetEnImagesPage(locale)
     const {
         error: errorChambre,
         isLoading: isLoadingChambre,
         data: dataChambre
-    } = useGetGalerieChambre(loadChambre)
+    } = useGetGalerieChambre(loadChambre, locale)
     const {
         error: errorSalon,
         isLoading: isLoadingSalon,
         data: dataSalon
-    } = useGetGalerieSalon(loadSalon)
+    } = useGetGalerieSalon(loadSalon, locale)
     const {
         error: errorSalleDeBain,
         isLoading: isLoadingSalleDeBain,
         data: dataSalleDeBain
-    } = useGetGalerieSalleDeBain(loadSalleDeBain)
+    } = useGetGalerieSalleDeBain(loadSalleDeBain, locale)
     const {
         error: errorCuisine,
         isLoading: isLoadingCuisine,
         data: dataCuisine
-    } = useGetGalerieCuisine(loadCuisine)
+    } = useGetGalerieCuisine(loadCuisine, locale)
 
     if (isLoading) {
         return (
@@ -82,7 +82,7 @@ const EnImages = ({ seo }) => {
                             }}
                             bgColor={loadChambre ? "#D7A989" : "transparent"}
                             _hover={{backgroundColor: "#D7A989"}}
-                        >La Chambre</Text>
+                        >{locale && locale !== 'fr-FR' ? "Bedroom" : "La Chambre"}</Text>
                     </Box>
                     <Box align="center" w={{base:'50%', lg:"25%"}}>
                         <Text
@@ -100,7 +100,7 @@ const EnImages = ({ seo }) => {
                             }}
                             bgColor={loadSalon ? "#D7A989" : "transparent"}
                             _hover={{backgroundColor: "#D7A989"}}
-                        >Le salon</Text>
+                        >{locale && locale !== 'fr-FR' ? "Living room" : "Le Salon"}</Text>
                     </Box>
                     <Box align="center" w={{base:'50%', lg:"25%"}}>
                         <Text
@@ -118,7 +118,7 @@ const EnImages = ({ seo }) => {
                             }}
                             bgColor={loadSalleDeBain ? "#D7A989" : "transparent"}
                             _hover={{backgroundColor: "#D7A989"}}
-                        >La salle de bain</Text>
+                        >{locale && locale !== 'fr-FR' ? "Bathroom" : "La salle de bain"}</Text>
                     </Box>
                     <Box align="center" w={{base:'50%', lg:"25%"}}>
                         <Text
@@ -136,7 +136,7 @@ const EnImages = ({ seo }) => {
                             }}
                             bgColor={loadCuisine ? "#D7A989" : "transparent"}
                             _hover={{backgroundColor: "#D7A989"}}
-                        >La cuisine</Text>
+                        >{locale && locale !== 'fr-FR' ? "Kitchen" : "La cuisine"}</Text>
                     </Box>
                 </Flex>
             </Flex>
@@ -180,24 +180,25 @@ const EnImages = ({ seo }) => {
                     <SliderImage datas={dataCuisine} />
                 </Box>
             }
-            <ByLuxuriaCard />
+            <ByLuxuriaCard locale={locale} />
         </>
     )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({locale}) {
   // Run API calls in parallel
-  const [ enImagesRes] = await Promise.all([
+  const [enImagesRes] = await Promise.all([
     fetchAPI("/en-images-page", {
       populate: {
         seo: { populate: "*" },
       },
-    }),
+    }, locale),
   ]);
 
   return {
     props: {
-      seo: enImagesRes.data.attributes.seo,
+        seo: enImagesRes.data.attributes.seo,
+        locale: locale
     },
     revalidate: 1,
   };

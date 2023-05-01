@@ -22,7 +22,7 @@ import { motion } from "framer-motion"
 import {FaWhatsapp} from "react-icons/fa"
 import { GiSquare } from 'react-icons/gi'
 import { useRouter } from "next/router"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../../pages/_app"
 import { useDialogContext } from "../Dialog/DialogContext"
 
@@ -30,13 +30,23 @@ const MotionBox = motion(Box)
 const MotionHStack = motion(HStack)
 export const Nav = () => {
     const router = useRouter()
+    const locale = router.locale
+    console.log(locale)
     const { urlReservation } = useContext(GlobalContext);
     const { setOpenDialog } = useDialogContext()
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { data } = useGetNavLinks(true)
+    const { data } = useGetNavLinks(locale)
     const { data: socials } = useGetSocials()
     const dataSocials = socials || []
+    const [reserve, setReserve] = useState("Réserver une nuit")
 
+    useEffect(() => {
+        if (locale && locale !== 'fr-FR') {
+            setReserve("Book a night")
+        } else {
+            setReserve("Réserver une nuit")
+        }
+    }, [locale])
     const onTest = () => {
         onOpen()
     }
@@ -59,7 +69,7 @@ export const Nav = () => {
                     >
                         <HStack
                             mt={"60px"}
-                            mr={"-135px"}
+                            mr={(locale && locale !== "fr-FR") ? "-120px" : "-135px"}
                             spacing={0}
                             align="center"
                             transform={'rotate(-90deg)'}
@@ -103,7 +113,7 @@ export const Nav = () => {
                                     textTransform={"uppercase"}
                                     fontSize="xs"
                                     color="white"
-                                >Réserver une nuit</Text>
+                                >{reserve}</Text>
                             </MotionBox>
                             <MotionHStack
                                 role="group"
@@ -298,9 +308,9 @@ export const Nav = () => {
                                 >
                                     <Text
                                         textAlign={"center"}
-                                        pb={1}
+                                        pb={0}
                                         fontSize="xs"
-                                    >Fermer</Text>
+                                    >{(locale && locale !== 'fr-FR') ? "Close" : "Fermer"}</Text>
                                     <CloseIcon transform={'rotate(90deg)'} />
                                 </HStack>
                             </MotionBox>

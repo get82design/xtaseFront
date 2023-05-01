@@ -15,6 +15,7 @@ import { appWithTranslation } from 'next-i18next';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { useRouter } from 'next/router';
 
 const theme = extendTheme({
   colors: {

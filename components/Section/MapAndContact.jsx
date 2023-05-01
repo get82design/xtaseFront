@@ -3,8 +3,8 @@ import { getStrapiMedia } from "../../lib/media"
 import { Box, Button, Flex, Heading, Stack, Text } from "@chakra-ui/react"
 import {FaWhatsapp} from "react-icons/fa"
 
-export const MapAndContact = () => {
-    const { data: mapAndContact } = useGetMapAndContact()
+export const MapAndContact = ({locale}) => {
+    const { data: mapAndContact } = useGetMapAndContact(locale)
 
     const HeadingContact = ({mapAndContact}) => {
         return (
@@ -26,15 +26,15 @@ export const MapAndContact = () => {
                             <HeadingContact mapAndContact={mapAndContact} />
                         </Box>
                         <Stack>
-                            <Text className="text-primary">E-mail:</Text>
+                            <Text className="text-primary">Email:</Text>
                             <Text>{mapAndContact?.attributes.mail}</Text>
                         </Stack>
                         <Stack>
-                            <Text className="text-primary">Téléphone:</Text>
+                            <Text className="text-primary">{locale && locale !== "fr-FR" ? "Phone" : "Téléphone:"}</Text>
                             <Text>{mapAndContact?.attributes.phone}</Text>
                         </Stack>
                         <Stack>
-                            <Text className="text-primary">Messager social:</Text>
+                            <Text className="text-primary">{locale && locale !== "fr-FR" ? 'Social Messenger' : 'Messager social:'}</Text>
                             <Text>{mapAndContact?.attributes.whatsApp}</Text>
                         </Stack>
                     </Stack>

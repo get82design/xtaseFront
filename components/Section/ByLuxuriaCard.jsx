@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 
 const MotionText = motion(Text)
 const MotionHeading = motion(Heading)
-export const ByLuxuriaCard = () => {
-    const { data } = useGetCardByLuxuria()
+export const ByLuxuriaCard = ({locale}) => {
+    const { data } = useGetCardByLuxuria(locale)
     return (
         <Flex
             w='100%'

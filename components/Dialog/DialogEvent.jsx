@@ -2,10 +2,13 @@ import { Box, Button, Heading, Modal, ModalBody, ModalCloseButton, ModalContent,
 import { useGetModal } from "../../hook/hook"
 import { getStrapiMedia } from "../../lib/media"
 import { useDialogContext } from "./DialogContext"
+import { useRouter } from "next/router"
 
 export const DialogEvent = () => {
+    const router = useRouter()
+    const locale = router.locale
     const { openDialog, setOpenDialog } = useDialogContext()
-    const {data} = useGetModal(openDialog)
+    const {data} = useGetModal(openDialog, locale)
     return (
         <Modal isOpen={openDialog} onClose={() => setOpenDialog(false)}>
             <ModalOverlay />
