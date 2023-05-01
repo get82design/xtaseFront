@@ -59,87 +59,91 @@ const EnImages = ({ seo, locale }) => {
                 p={8}
                 bgGradient="radial(#061B61, #0C0023 60%)"
             ></Flex>
-            <EnImagesHeading data={data} />
-            <Flex
-                py={32}
-                w="100%"
-                justifyContent={"center"}
-            >
-                <Flex w={{ base: '90vw', md:'70vw'}} cursor="pointer" zIndex={1100} flexWrap={'wrap'}>
-                    <Box align="center" w={{base:'50%', lg:"25%"}} fontFamily={"proxima-nova"}>
-                        <Text
-                            fontSize={{base:'md', lg:"lg"}}
-                            textTransform={"uppercase"}
-                            py={3}
-                            border="1px solid #D7A989"
-                            textAlign="center"
-                            color="white"
-                            onClick={() => {
-                                setLoadSalleDeBain(false)
-                                setLoadCuisine(false)
-                                setLoadSalon(false)
-                                setLoadChambre(true)
-                            }}
-                            bgColor={loadChambre ? "#D7A989" : "transparent"}
-                            _hover={{backgroundColor: "#D7A989"}}
-                        >{locale && locale !== 'fr-FR' ? "Bedroom" : "La Chambre"}</Text>
-                    </Box>
-                    <Box align="center" w={{base:'50%', lg:"25%"}}>
-                        <Text
-                            fontSize={{base:'md', lg:"lg"}}
-                            textTransform={"uppercase"}
-                            py={3}
-                            border="1px solid #D7A989"
-                            textAlign="center"
-                            color="white"
-                            onClick={() => {
-                                setLoadSalleDeBain(false)
-                                setLoadCuisine(false)
-                                setLoadChambre(false)
-                                setLoadSalon(true)
-                            }}
-                            bgColor={loadSalon ? "#D7A989" : "transparent"}
-                            _hover={{backgroundColor: "#D7A989"}}
-                        >{locale && locale !== 'fr-FR' ? "Living room" : "Le Salon"}</Text>
-                    </Box>
-                    <Box align="center" w={{base:'50%', lg:"25%"}}>
-                        <Text
-                            fontSize={{base:'md', lg:"lg"}}
-                            textTransform={"uppercase"}
-                            py={3}
-                            border="1px solid #D7A989"
-                            textAlign="center"
-                            color="white"
-                            onClick={() => {
-                                setLoadCuisine(false)
-                                setLoadChambre(false)
-                                setLoadSalon(false)
-                                setLoadSalleDeBain(true)
-                            }}
-                            bgColor={loadSalleDeBain ? "#D7A989" : "transparent"}
-                            _hover={{backgroundColor: "#D7A989"}}
-                        >{locale && locale !== 'fr-FR' ? "Bathroom" : "La salle de bain"}</Text>
-                    </Box>
-                    <Box align="center" w={{base:'50%', lg:"25%"}}>
-                        <Text
-                            fontSize={{base:'md', lg:"lg"}}
-                            textTransform={"uppercase"}
-                            py={3}
-                            border="1px solid #D7A989"
-                            textAlign="center"
-                            color="white"
-                            onClick={() => {
-                                setLoadChambre(false)
-                                setLoadSalon(false)
-                                setLoadSalleDeBain(false)
-                                setLoadCuisine(true)
-                            }}
-                            bgColor={loadCuisine ? "#D7A989" : "transparent"}
-                            _hover={{backgroundColor: "#D7A989"}}
-                        >{locale && locale !== 'fr-FR' ? "Kitchen" : "La cuisine"}</Text>
-                    </Box>
-                </Flex>
-            </Flex>
+            {data &&
+                <>
+                    <EnImagesHeading data={data} />
+                    <Flex
+                        py={32}
+                        w="100%"
+                        justifyContent={"center"}
+                    >
+                        <Flex w={{ base: '90vw', md: '70vw' }} cursor="pointer" zIndex={1100} flexWrap={'wrap'}>
+                            <Box align="center" w={{ base: '50%', lg: "25%" }} fontFamily={"proxima-nova"}>
+                                <Text
+                                    fontSize={{ base: 'md', lg: "lg" }}
+                                    textTransform={"uppercase"}
+                                    py={3}
+                                    border="1px solid #D7A989"
+                                    textAlign="center"
+                                    color="white"
+                                    onClick={() => {
+                                        setLoadSalleDeBain(false)
+                                        setLoadCuisine(false)
+                                        setLoadSalon(false)
+                                        setLoadChambre(true)
+                                    }}
+                                    bgColor={loadChambre ? "#D7A989" : "transparent"}
+                                    _hover={{ backgroundColor: "#D7A989" }}
+                                >{locale && locale !== 'fr-FR' ? "Bedroom" : "La Chambre"}</Text>
+                            </Box>
+                            <Box align="center" w={{ base: '50%', lg: "25%" }}>
+                                <Text
+                                    fontSize={{ base: 'md', lg: "lg" }}
+                                    textTransform={"uppercase"}
+                                    py={3}
+                                    border="1px solid #D7A989"
+                                    textAlign="center"
+                                    color="white"
+                                    onClick={() => {
+                                        setLoadSalleDeBain(false)
+                                        setLoadCuisine(false)
+                                        setLoadChambre(false)
+                                        setLoadSalon(true)
+                                    }}
+                                    bgColor={loadSalon ? "#D7A989" : "transparent"}
+                                    _hover={{ backgroundColor: "#D7A989" }}
+                                >{locale && locale !== 'fr-FR' ? "Living room" : "Le Salon"}</Text>
+                            </Box>
+                            <Box align="center" w={{ base: '50%', lg: "25%" }}>
+                                <Text
+                                    fontSize={{ base: 'md', lg: "lg" }}
+                                    textTransform={"uppercase"}
+                                    py={3}
+                                    border="1px solid #D7A989"
+                                    textAlign="center"
+                                    color="white"
+                                    onClick={() => {
+                                        setLoadCuisine(false)
+                                        setLoadChambre(false)
+                                        setLoadSalon(false)
+                                        setLoadSalleDeBain(true)
+                                    }}
+                                    bgColor={loadSalleDeBain ? "#D7A989" : "transparent"}
+                                    _hover={{ backgroundColor: "#D7A989" }}
+                                >{locale && locale !== 'fr-FR' ? "Bathroom" : "La salle de bain"}</Text>
+                            </Box>
+                            <Box align="center" w={{ base: '50%', lg: "25%" }}>
+                                <Text
+                                    fontSize={{ base: 'md', lg: "lg" }}
+                                    textTransform={"uppercase"}
+                                    py={3}
+                                    border="1px solid #D7A989"
+                                    textAlign="center"
+                                    color="white"
+                                    onClick={() => {
+                                        setLoadChambre(false)
+                                        setLoadSalon(false)
+                                        setLoadSalleDeBain(false)
+                                        setLoadCuisine(true)
+                                    }}
+                                    bgColor={loadCuisine ? "#D7A989" : "transparent"}
+                                    _hover={{ backgroundColor: "#D7A989" }}
+                                >{locale && locale !== 'fr-FR' ? "Kitchen" : "La cuisine"}</Text>
+                            </Box>
+                        </Flex>
+                    </Flex>
+                </>
+            }
             {( loadChambre && isLoadingChambre) &&
                 <Flex h="100vh" justifyContent={"center"} w="100%">
                     <Spinner size="xl" color="white" />
