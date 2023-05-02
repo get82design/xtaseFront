@@ -14,7 +14,7 @@ export const getGlobal = () => {
 }
 
 export const getNavLinks = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/nav-links?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/nav-links?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const navlinkRes = await res.json()
     return navlinkRes.data
     // return fetchAPI("/nav-links", {
@@ -31,7 +31,7 @@ export const getSocials = async () => {
 
 // Je ne reçois pas la photo... Trouver pourquoi ???????
 export const getHomePage = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homepage?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homepage?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const homepageRes = await res.json()
     return homepageRes.data
     // return fetchAPI(`/homepage`, {
@@ -124,7 +124,7 @@ export const getListSituationItems = (locale) => {
 }
 
 export const getMapAndContact = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/map-and-contact?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/map-and-contact?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const mapAndContactRes = await res.json()
     return mapAndContactRes.data
     // return fetchAPI('/map-and-contact', {
@@ -133,7 +133,7 @@ export const getMapAndContact = async (locale) => {
 }
 
 export const getCardByLuxuria = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/card-by-luxuria?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/card-by-luxuria?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const cardByLuxuriaRes = await res.json()
     return cardByLuxuriaRes.data
     // return fetchAPI('/card-by-luxuria', {
