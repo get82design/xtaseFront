@@ -65,13 +65,15 @@ export const Contact = ({ seo, locale }) => {
 
 export async function getServerSideProps({locale}) {
   // Run API calls in parallel
-  const [contactRes] = await Promise.all([
-    fetchAPI("/contact-page", {
-      populate: {
-        seo: { populate: "*" },
-      },
-    }, locale),
-  ]);
+  const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/contact-page?populate=seo&[populate][0]=seo.shareImage${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+  const contactRes = await res.json()
+  // const [contactRes] = await Promise.all([
+  //   fetchAPI("/contact-page", {
+  //     populate: {
+  //       seo: { populate: "*" },
+  //     },
+  //   }, locale),
+  // ]);
 
   return {
     props: {

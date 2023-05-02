@@ -80,7 +80,7 @@ const Home = ({ seo, locale }) => {
 
 export const getServerSideProps = async ({ locale }) => {
   // Run API calls in parallel
-  const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homepage?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+  const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homepage?populate=seo&[populate][0]=seo.shareImage${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
   const homepageRes = await res.json()
   // const [ homepageRes] = await Promise.all([
   //   fetchAPI(`/homepage`, {
@@ -91,7 +91,7 @@ export const getServerSideProps = async ({ locale }) => {
   //   }, locale),
   // ]);
 
-  // console.log('homepage', globalRes)
+  console.log('homepage', homepageRes)
   return {
     props: {
       // home: homepageRes.data.attributes,

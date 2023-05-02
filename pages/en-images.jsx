@@ -11,7 +11,6 @@ import {
     useGetGalerieSalleDeBain,
     useGetGalerieSalon
 } from "../hook/hook";
-import { fetchAPI } from "../lib/api";
 
 const EnImages = ({ seo, locale }) => {
     const [loadChambre, setLoadChambre] = useState(true)
@@ -191,13 +190,15 @@ const EnImages = ({ seo, locale }) => {
 
 export async function getServerSideProps({locale}) {
   // Run API calls in parallel
-  const [enImagesRes] = await Promise.all([
-    fetchAPI("/en-images-page", {
-      populate: {
-        seo: { populate: "*" },
-      },
-    }, locale),
-  ]);
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/en-images-page?populate=seo&[populate][0]=seo.shareImage${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const enImagesRes = await res.json()
+//   const [enImagesRes] = await Promise.all([
+//     fetchAPI("/en-images-page", {
+//       populate: {
+//         seo: { populate: "*" },
+//       },
+//     }, locale),
+//   ]);
 
   return {
     props: {
