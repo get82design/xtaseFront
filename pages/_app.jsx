@@ -35,20 +35,20 @@ export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }) => {
   const { global } = pageProps;
-
+  console.log('global', global)
   return (
     <>
       <Head>
         <link
           rel="shortcut icon"
-          href={getStrapiMedia(global.attributes.favicon)}
+          href={getStrapiMedia(global?.attributes.favicon)}
         />
       </Head>
-      <GlobalContext.Provider value={global.attributes}>
+      <GlobalContext.Provider value={global?.attributes}>
         <QueryClientProvider client={queryClient}>
           <ChakraProvider theme={theme}>
             <DialogProvider>
-              <Layout logo={global.attributes.logo} copyright={global.attributes.copyright}>
+              <Layout logo={global?.attributes.logo} copyright={global?.attributes.copyright}>
                 <DialogEvent />
                 <Component {...pageProps} />
               </Layout>
@@ -68,7 +68,8 @@ MyApp.getInitialProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   // const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
-  const res = await fetch('https://seal-app-ka6lw.ondigitalocean.app/api/global?populate[shareImage]&populate[favicon]')
+  // const res = await fetch('https://seal-app-ka6lw.ondigitalocean.app/api/global?populate=*')
+  const res = await fetch('https://seal-app-ka6lw.ondigitalocean.app/api/global?populate=favicon&populate[0]=defaultSeo&[populate][3]=defaultSeo.shareImage')
   const globalRes = await res.json()
   // Pass the data to our page via props
   return { pageProps: { global: globalRes.data } };
