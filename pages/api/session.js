@@ -22,15 +22,21 @@ export const getNavLinks = async (locale) => {
     // }, locale).then((response) => response.data)
 }
 
-export const getSocials = () => {
-    return fetchAPI("/socials").then((response) => response.data)
+export const getSocials = async () => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/socials?populate=*`)
+    const socialRes = await res.json()
+    return socialRes.data
+    // return fetchAPI("/socials").then((response) => response.data)
 }
 
 // Je ne reçois pas la photo... Trouver pourquoi ???????
-export const getHomePage = (locale) => {
-    return fetchAPI(`/homepage`, {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getHomePage = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homapage?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const homepageRes = await res.json()
+    return homepageRes.data
+    // return fetchAPI(`/homepage`, {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
 
 export const getByLuxuriaPage = (locale) => {
