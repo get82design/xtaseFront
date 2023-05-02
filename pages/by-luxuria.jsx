@@ -15,7 +15,8 @@ const ByLuxuria = ({ seo, locale }) => {
         <Spinner size="xl" color="white" />
       </Flex>
     )
-  }
+    }
+  console.log('data', data)
     return (
         <>
             <Seo seo={seo} />

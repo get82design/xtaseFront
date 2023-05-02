@@ -14,7 +14,7 @@ export const getGlobal = () => {
 }
 
 export const getNavLinks = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/nav-links?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/nav-links?${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const navlinkRes = await res.json()
     return navlinkRes.data
     // return fetchAPI("/nav-links", {
@@ -39,24 +39,27 @@ export const getHomePage = async (locale) => {
     // }, locale).then((response) => response.data)
 }
 
-export const getByLuxuriaPage = (locale) => {
-    return fetchAPI('/by-luxuria-page', {
-        populate: {
-            backgroundVideo: "*",
-            buttonResa: "*",
-            hero: "*",
-            imgHero: "*",
-            sectionOne: {
-                populate: "*"
-            },
-            sectionTwo: {
-                populate: "*"
-            }, 
-            sectionThree: {
-                populate: "*"
-            }
-        }
-    }, locale).then((response) => response.data)
+export const getByLuxuriaPage = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/by-luxuria-page?populate=hero&populate[1]=imgHero&populate[2]=backgroundVideo&populate[3]=buttonResa@populate[4]=sectionOne.img&populate[5]=sectionTwo.img&populate[6]=sectionThree.img${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const byLuxuriaRes = await res.json()
+    return byLuxuriaRes.data
+    // return fetchAPI('/by-luxuria-page', {
+    //     populate: {
+    //         backgroundVideo: "*",
+    //         buttonResa: "*",
+    //         hero: "*",
+    //         imgHero: "*",
+    //         sectionOne: {
+    //             populate: "*"
+    //         },
+    //         sectionTwo: {
+    //             populate: "*"
+    //         }, 
+    //         sectionThree: {
+    //             populate: "*"
+    //         }
+    //     }
+    // }, locale).then((response) => response.data)
 }
 
 export const getEnImagesPage = async (locale) => {
@@ -77,34 +80,49 @@ export const getContactPage = async (locale) => {
     // }, locale).then((response) => response.data)
 }
 
-export const getGalerieChambre = (locale) => {
-    return fetchAPI('/galerie-chambres', {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getGalerieChambre = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/galerie-chambres?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const chambreRes = await res.json()
+    return chambreRes.data
+    // return fetchAPI('/galerie-chambres', {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
 
-export const getGalerieSalon = (locale) => {
-    return fetchAPI('/galerie-salons', {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getGalerieSalon = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/galerie-salons?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const salonRes = await res.json()
+    return salonRes.data
+    // return fetchAPI('/galerie-salons', {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
 
-export const getGalerieSalleDeBain = (locale) => {
-    return fetchAPI('/galerie-salle-de-bains', {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getGalerieSalleDeBain = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/galerie-salle-de-bains?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const bainRes = await res.json()
+    return bainRes.data
+    // return fetchAPI('/galerie-salle-de-bains', {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
 
-export const getGalerieCuisine = (locale) => {
-    return fetchAPI('/galerie-cuisines', {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getGalerieCuisine = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/galerie-cuisines?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const cuisineRes = await res.json()
+    return cuisineRes.data
+    // return fetchAPI('/galerie-cuisines', {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
 
-export const getModal = (locale) => {
-    return fetchAPI('/modal', {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getModal = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/modal?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const modalRes = await res.json()
+    return modalRes.data
+    // return fetchAPI('/modal', {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
 
 export const getListJeuxItems = async (locale) => {
