@@ -36,13 +36,15 @@ const ByLuxuria = ({ seo, locale }) => {
 
 export async function getServerSideProps({ locale }) {
   // Run API calls in parallel
-  const [ byLuxuriaRes] = await Promise.all([
-    fetchAPI("/by-luxuria-page", {
-      populate: {
-        seo: { populate: "*" },
-      },
-    }, locale),
-  ]);
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/by-luxuria-page?populate=seo&[populate][0]=seo.shareImage${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const byLuxuriaRes = await res.json()
+  // const [ byLuxuriaRes] = await Promise.all([
+  //   fetchAPI("/by-luxuria-page", {
+  //     populate: {
+  //       seo: { populate: "*" },
+  //     },
+  //   }, locale),
+  // ]);
 
   return {
     props: {
