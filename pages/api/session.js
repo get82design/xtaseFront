@@ -14,7 +14,7 @@ export const getGlobal = () => {
 }
 
 export const getNavLinks = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/nav-links?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/nav-links?populate[shareImage]&populate[favicon]&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const navlinkRes = await res.json()
     return navlinkRes.data
     // return fetchAPI("/nav-links", {
