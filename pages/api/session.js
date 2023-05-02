@@ -31,7 +31,7 @@ export const getSocials = async () => {
 
 // Je ne reçois pas la photo... Trouver pourquoi ???????
 export const getHomePage = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homepage?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homepage?${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const homepageRes = await res.json()
     return homepageRes.data
     // return fetchAPI(`/homepage`, {
@@ -101,30 +101,36 @@ export const getModal = (locale) => {
     }, locale).then((response) => response.data)
 }
 
-export const getListJeuxItems = (locale) => {
-    return fetchAPI('/jeux-items', {
-        populate: {
-            label: "*",
-            icon: {
-                populate: "*"
-            }
-        }
-    }, locale).then((response) => response.data)
+export const getListJeuxItems = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/jeux-items?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const listJeuxRes = await res.json()
+    return listJeuxRes.data
+    // return fetchAPI('/jeux-items', {
+    //     populate: {
+    //         label: "*",
+    //         icon: {
+    //             populate: "*"
+    //         }
+    //     }
+    // }, locale).then((response) => response.data)
 }
 
-export const getListSituationItems = (locale) => {
-    return fetchAPI('/situation-items', {
-        populate: {
-            label: "*",
-            icon: {
-                populate: "*"
-            }
-        }
-    }, locale).then((response) => response.data)
+export const getListSituationItems = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/situation-items?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const listSituationRes = await res.json()
+    return listSituationRes.data
+    // return fetchAPI('/situation-items', {
+    //     populate: {
+    //         label: "*",
+    //         icon: {
+    //             populate: "*"
+    //         }
+    //     }
+    // }, locale).then((response) => response.data)
 }
 
 export const getMapAndContact = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/map-and-contact?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/map-and-contact?${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const mapAndContactRes = await res.json()
     return mapAndContactRes.data
     // return fetchAPI('/map-and-contact', {
@@ -133,7 +139,7 @@ export const getMapAndContact = async (locale) => {
 }
 
 export const getCardByLuxuria = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/card-by-luxuria?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/card-by-luxuria?&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const cardByLuxuriaRes = await res.json()
     return cardByLuxuriaRes.data
     // return fetchAPI('/card-by-luxuria', {
