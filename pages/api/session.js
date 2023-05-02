@@ -59,16 +59,22 @@ export const getByLuxuriaPage = (locale) => {
     }, locale).then((response) => response.data)
 }
 
-export const getEnImagesPage = (locale) => {
-    return fetchAPI('/en-images-page', {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getEnImagesPage = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/en-images-page?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const enImagesRes = await res.json()
+    return enImagesRes.data
+    // return fetchAPI('/en-images-page', {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
 
-export const getContactPage = (locale) => {
-    return fetchAPI('/contact-page', {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getContactPage = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/contact-page?populate=*&${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const contactRes = await res.json()
+    return contactRes.data
+    // return fetchAPI('/contact-page', {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
 
 export const getGalerieChambre = (locale) => {
