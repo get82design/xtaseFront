@@ -68,7 +68,7 @@ MyApp.getInitialProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   // const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
-  const res = await fetch('https://seal-app-ka6lw.ondigitalocean.app/api/global?populate=*')
+  const res = await fetch('https://seal-app-ka6lw.ondigitalocean.app/api/global?populate[shareImage]&populate[favicon]')
   const globalRes = await res.json()
   // Pass the data to our page via props
   return { pageProps: { global: globalRes.data } };
