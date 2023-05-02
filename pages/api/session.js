@@ -31,7 +31,7 @@ export const getSocials = async () => {
 
 // Je ne reçois pas la photo... Trouver pourquoi ???????
 export const getHomePage = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homapage?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homepage?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const homepageRes = await res.json()
     return homepageRes.data
     // return fetchAPI(`/homepage`, {
@@ -123,14 +123,20 @@ export const getListSituationItems = (locale) => {
     }, locale).then((response) => response.data)
 }
 
-export const getMapAndContact = (locale) => {
-    return fetchAPI('/map-and-contact', {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getMapAndContact = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/map-and-contact?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const mapAndContactRes = await res.json()
+    return mapAndContactRes.data
+    // return fetchAPI('/map-and-contact', {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
 
-export const getCardByLuxuria = (locale) => {
-    return fetchAPI('/card-by-luxuria', {
-        populate: "*"
-    }, locale).then((response) => response.data)
+export const getCardByLuxuria = async (locale) => {
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/card-by-luxuria?populate=*${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const cardByLuxuriaRes = await res.json()
+    return cardByLuxuriaRes.data
+    // return fetchAPI('/card-by-luxuria', {
+    //     populate: "*"
+    // }, locale).then((response) => response.data)
 }
