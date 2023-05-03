@@ -54,8 +54,8 @@ export const Layout = ({ children, logo, copyright }) => {
                     transition={{ duration: 0.5 }}
                     ml={{ base: 0, lg: -12 }}
                     mr={{base:-4, lg:0}}
-                    width={{base:"128px", md: "256px"}}
-                    height={{base:"66px", md: "132px"}}
+                    width={{base:"128px", md: "200px"}}
+                    height={{base:"66px", md: "103px"}}
                     src="/images/logoColor.png"
                     alt="Logo Xtase by Luxuria"
                 />
@@ -64,9 +64,11 @@ export const Layout = ({ children, logo, copyright }) => {
             <Box zIndex="2000" position="fixed" top="4" right="4" color="white">
                 <Link
                     href={location}
-                    locale={router.locale === 'en' ? 'fr-FR' : 'en'}>
-                    <Box color={'white'} cursor="pointer">
-                        {router.locale === 'en' ? 'FR' : 'ENG'}
+                    locale={router.locale === 'en' ? 'fr-FR' : 'en'}
+                >
+                    <Box color={'white'} cursor="pointer"
+                    fontSize="sm">
+                        {router.locale === 'en' ? 'FR.' : 'ENG.'}
                     </Box>
                 </Link>
             </Box>

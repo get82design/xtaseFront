@@ -44,14 +44,14 @@ export const VideoSection = ({ data }) => {
                         viewport={{ once: true }}
                         textAlign={'center'}
                         textTransform='uppercase'
-                        letterSpacing={'wider'}
+                        letterSpacing={'widest'}
                         fontWeight={'normal'}
                         fontFamily="proxima-nova"
                         as='h3'
-                        size='md'
+                        fontSize="18px"
                         color="#D7A989"
                     >{data?.backgroundVideo.subTitleOnVideo}</MotionHeading>
-                    <Flex justifyContent={"center"} w="100%">
+                    <Flex justifyContent={"center"} w="100%" pt={4}>
                         {/* <Box bgColor={"#D7A989"} rounded="full" px={4} py={1}>
                             <Icon w={8} h={8} color="white" as={MdPlayArrow} />
                         </Box> */}

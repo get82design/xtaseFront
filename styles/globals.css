@@ -126,6 +126,7 @@ a {
 .control-dots {
   text-align: left !important;
   padding-left: 80px !important;
+  padding-bottom: 10px !important;
 }
 
 .mySwiper .swiper-wrapper .swiper-slide img {
@@ -145,7 +146,7 @@ a {
   background-color: rgba(0,0,0, 0.5);
   border-radius: 100%;
   width:44px !important;
-  border:1px solid white;
+  border:1px solid #D7A989;
 }
 .swiper-button-prev {
   left: 0px !important;

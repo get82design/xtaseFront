@@ -46,7 +46,7 @@ export const HomeList = ({img, title, list}) => {
                             alt=""
                             src={getStrapiMedia(jeu?.attributes.icon)}
                         />
-                        <Text color="white">{jeu?.attributes.label}</Text>
+                        <Text color="white" fontWeight={"light"}>{jeu?.attributes.label}</Text>
                     </MotionFlex>
                 )
             })}

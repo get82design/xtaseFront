@@ -31,13 +31,15 @@ export const ByLuxuriaCard = ({locale}) => {
                 size='2xl'
                 color="white"
             >{data?.attributes.title}</MotionHeading>
-            <Box w={{base:'100vw', md:'70vw'}} px={8}>
+            <Box w={{base:'100vw', md:'80vw'}} px={8}>
                 <MotionText
                     initial={{ scale: 0, filter:"blur(10px)" }}
                     whileInView={{ scale: 1, filter:"blur(0px)" }}
                     transition={{duration: 1, delay: 0.5}}
                     viewport={{ once: true }}
-                    fontSize={{base:'md', md:'xl'}}
+                    fontSize={{base:'md', md:'2xl'}}
+                    lineHeight={"10"}
+                    letterSpacing={"10"}
                     textAlign={'center'}
                     py={2}
                     color="white"
@@ -47,7 +49,9 @@ export const ByLuxuriaCard = ({locale}) => {
                     whileInView={{ scale: 1, filter:"blur(0px)" }}
                     transition={{duration: 1, delay: 1}}
                     viewport={{ once: true }}
-                    fontSize={{base:'md', md:'xl'}}
+                    fontSize={{ base: 'md', md: '2xl' }}
+                    lineHeight={"10"}
+                    letterSpacing={"10"}
                     textAlign={'center'}
                     py={2}
                     color="white"

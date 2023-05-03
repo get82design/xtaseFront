@@ -20,14 +20,14 @@ export const HomeHeading = ({data}) => {
     }
   }, [data])
   return (
-    <Box w='100%' h='100vh' position='relative' mb={16}>
+    <Box w='100%' h='80vh' position='relative' mb={16}>
       {/* slider */}
       <Box w="100%" display={{base:'none', md:'initial'}}>
         <SliderHeader slides={slideData} />
       </Box>
       <Box
         w="100%"
-        h="100vh"
+        h="80vh"
         display={{ md: 'none' }}
         bgSize="cover"
         bgImage={getStrapiMedia(data.heroMobileImg)}
@@ -38,8 +38,8 @@ export const HomeHeading = ({data}) => {
         top={0}
         left={0}
         w='100%'
-        h="100vh"
-        bgGradient="radial(transparent, #0C0023 80%)"></Box>
+        h="80vh"
+        bgGradient="radial(rgba(12,0,35,0.2), #0C0023 80%)"></Box>
       {/* Title */}
       {data &&
         <Flex
@@ -64,6 +64,7 @@ export const HomeHeading = ({data}) => {
               px={8}
               size={{base:'xl', md:'2xl'}}
               color="white"
+              fontWeight={'semibold'}
             >{data?.hero.title}</Heading>  
           </MotionBox>
           <MotionBox
@@ -74,10 +75,13 @@ export const HomeHeading = ({data}) => {
             <Heading
               maxWidth={{base:'88vw', md:'50vw'}}
               textAlign={'center'}
-              fontWeight={'normal'}
               fontFamily="proxima-nova"
+              fontWeight={'medium'}
               as='h2'
-              size={{base:'sm', md:'md'}}
+              // size={{base:'sm', md:'md'}}
+              fontSize={{ base: "16px", md: "18px" }}
+              lineHeight="short"
+              letterSpacing="wide"
               color="white"
               >{data?.hero.subTitle}</Heading> 
           </MotionBox>

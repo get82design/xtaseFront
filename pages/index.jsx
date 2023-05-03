@@ -46,7 +46,7 @@ const Home = ({ seo, locale }) => {
       <Flex
         w="100%"
         // h="196px"
-        h={{base: "100px", md: "150px"}}
+        h={{base: "100px", md: "130px"}}
         justifyContent={'center'}
         p={8}
         bgGradient="radial(#061B61, #0C0023 60%)"

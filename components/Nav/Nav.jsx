@@ -32,7 +32,7 @@ export const Nav = () => {
     const router = useRouter()
     const locale = router.locale
     console.log(locale)
-    const urlReservation = useContext(GlobalContext);
+    const { urlReservation } = useContext(GlobalContext);
     const { setOpenDialog } = useDialogContext()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { data } = useGetNavLinks(locale)
@@ -69,7 +69,7 @@ export const Nav = () => {
                     >
                         <HStack
                             mt={"60px"}
-                            mr={(locale && locale !== "fr-FR") ? "-120px" : "-135px"}
+                            mr={(locale && locale !== "fr-FR") ? "-125px" : "-135px"}
                             spacing={0}
                             align="center"
                             transform={'rotate(-90deg)'}
@@ -127,7 +127,7 @@ export const Nav = () => {
                                 mr={-10}
                                 onClick={onTest}
                             >
-                                <Text textAlign={"center"} fontSize="xs">Menu</Text>
+                                <Text textAlign={"center"} textTransform={'uppercase'} fontWeight={"normal"} letterSpacing={"wider"} fontSize="xs">Menu</Text>
                                 <HamburgerIcon transform={'rotate(90deg)'} />
                             </MotionHStack>
                         </HStack>
@@ -178,19 +178,22 @@ export const Nav = () => {
                             <Box
                                 position={"absolute"}
                                 zIndex={3000}
-                                left={{base:12, md:32}}
+                                left={0}
                                 color="white"
                                 pt={8}
+                                w="100%"
                             >
-                                <Img
-                                    ml={{base:4,md:-12}}
-                                    src="/images/logoColor.png"
-                                    // style={{ width: "269px", height: "132px" }}
-                                    width={{base:"135px", md:"269px"}}
-                                    height={{base:"66px", md:"132px"}}
-                                    alt="Logo Xtase by Luxuria"
-                                />
-                                <List spacing={2} pt={12}>
+                                <Flex justifyContent={{base: "center", xl:"start"}} w="100%">
+                                    <Img
+                                        ml={{base:-8, lg:-32, xl:60}}
+                                        src="/images/logoColor.png"
+                                        // style={{ width: "269px", height: "132px" }}
+                                        width={{base:"135px", md:"200px"}}
+                                        height={{base:"66px", md:"103px"}}
+                                        alt="Logo Xtase by Luxuria"
+                                    />
+                                </Flex>
+                                <List spacing={2} pt={12} ml={{base:12, md:24}}>
                                     {data && data.map((navLink, idx=0) => (
                                         <Box
                                             key={idx}
@@ -297,6 +300,7 @@ export const Nav = () => {
                                 top={20}
                                 mr={-4}
                                 color="white"
+                                zIndex={3100}
                             >
                                 <HStack
                                     type="button"

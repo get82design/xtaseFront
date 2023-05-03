@@ -19,7 +19,7 @@ export const EnImagesSection = ({ data }) => {
     }, [])
     return (
         <Box w="100%" px={{base:4, md:8, lg:16}} py={24}>
-            <Stack w='100%' align="center">
+            <Stack w='100%' align="center" spacing={0}>
                 <MotionHeading
                     initial={{ filter:"blur(10px)" }}
                     whileInView={{ filter:"blur(0px)" }}
@@ -41,11 +41,11 @@ export const EnImagesSection = ({ data }) => {
                     viewport={{ once: true }}
                     textAlign={'center'}
                     textTransform='uppercase'
-                    letterSpacing={'wider'}
+                    letterSpacing={'widest'}
                     fontWeight={'normal'}
                     fontFamily="proxima-nova"
                     as='h3'
-                    size='md'
+                    fontSize="18px"
                     color="#D7A989"
                 >{data?.gallerySubTitle}</MotionHeading>
             </Stack>
