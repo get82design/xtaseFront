@@ -1,13 +1,20 @@
-import { Box, Heading, Image, Stack } from "@chakra-ui/react"
+import { Box, Button, Flex, HStack, Heading, Image, Stack, Text } from "@chakra-ui/react"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getStrapiMediaInArray } from "../../lib/media"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { FreeMode, Navigation } from "swiper";
+import { ChevronRightIcon, ArrowForwardIcon } from "@chakra-ui/icons"
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const MotionHeading = motion(Heading)
+const MotionBox = motion(Box)
+
 export const EnImagesSection = ({ data }) => {
     const [nbImg, setNbImg] = useState(0)
+    const router = useRouter()
+    const locale = router.locale
 
     useEffect(() => {
         if (window.innerWidth < 769) {
@@ -68,6 +75,37 @@ export const EnImagesSection = ({ data }) => {
                 </Swiper>
             </Box>
             }
+            <Flex w="100%" justifyContent={'flex-end'}>
+                <Link href={locale && locale !== 'fr-FR' ? "/en/en-images" : "/en-images"}>
+                    <Button
+                        aria-label="playForward"
+                        variant="unstyled"
+                        size="lg"
+                        role="group"
+                        // onClick={() => urlReservation
+                        //     ? window.open(urlReservation, "_blank")
+                        //     : setOpenDialog(true)
+                        // }
+                    >
+                        <HStack spacing="3" position="relative">
+                            <Text color="#D7A989">{locale && locale !== 'fr-FR' ? "SEE MORE" : "VOIR PLUS"}</Text>
+                            <Box _groupHover={{opacity:0}} transition="opacity 0.5s">
+                                <MotionBox mt="-1"
+                                    initial={{x:0}}
+                                    animate={{x:[-5, 0, -5]}}
+                                    transition={{duration: 0.5, repeat: Infinity, ease: "linear"}}
+                                >
+                                    <ChevronRightIcon color="#D7A989"/>
+                                </MotionBox>
+                            </Box>
+                            <ArrowForwardIcon opacity="0" color="#D7A989" _groupHover={{opacity:1}} transition="opacity 1s" position="absolute" top="1" right="1"/>
+                        </HStack>
+                        <Flex w="full" display="flex" justifyContent={"flex-end"}>
+                            <Box w="full" h="1px" bgColor="#D7A989" transition="width 0.5s ease" _groupHover={{width:"0"}}></Box>
+                        </Flex>
+                    </Button>
+                </Link>
+            </Flex>
         </Box>
     )
 }

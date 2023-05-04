@@ -69,7 +69,7 @@ export const Nav = () => {
                     >
                         <HStack
                             mt={"60px"}
-                            mr={(locale && locale !== "fr-FR") ? "-125px" : "-135px"}
+                            mr={(locale && locale !== "fr-FR") ? "-125px" : "-140px"}
                             spacing={0}
                             align="center"
                             transform={'rotate(-90deg)'}

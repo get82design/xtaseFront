@@ -25,6 +25,7 @@ export const Footer = ({ locale }) => {
             bottom={0}
             left={0}
             my={8}
+            fontFamily={"proxima-nova"}
         >
             <SimpleGrid
                 align="center"

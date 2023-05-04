@@ -33,16 +33,16 @@ export const Contact = ({ seo, locale }) => {
             opacity={0.3}
           ></Box>
           <form>
-            <Center mt={-60} color="white">
-              <Stack w={{ base: '90vw', lg: '50vw' }} border="1px solid #D7A989" spacing={0}>
+            <Center mt={-80} color="white" fontFamily={"proxima-nova"}>
+              <Stack zIndex={1100} w={{ base: '90vw', lg: '50vw' }} border="1px solid #D7A989" spacing={0}>
                 <Box w="100%" p={4} borderBottom={"1px solid #D7A989"}>
-                  <Input placeholder={locale && locale !== 'fr-FR' ? 'Name' : 'Nom'} name="name" variant={'unstyled'} _placeholder={{ color: "#D7A989" }} />
+                  <Input size="sm" letterSpacing={'widest'} placeholder={locale && locale !== 'fr-FR' ? 'NAME' : 'NOM'} name="name" variant={'unstyled'} _placeholder={{ color: "#D7A989" }} />
                 </Box>
                 <Box w="100%" p={4} borderBottom={"1px solid #D7A989"}>
-                  <Input placeholder='Email' name="email" variant={'unstyled'} _placeholder={{ color: "#D7A989" }} />
+                  <Input size="sm" letterSpacing={'widest'} placeholder='EMAIL' name="email" variant={'unstyled'} _placeholder={{ color: "#D7A989" }} />
                 </Box>
                 <Box w="100%" p={4}>
-                  <Textarea minH={48} placeholder="Message" name="message" variant={'unstyled'} _placeholder={{ color: "#D7A989" }} />
+                  <Textarea size="sm" letterSpacing={'widest'} minH={48} placeholder="MESSAGE" name="message" variant={'unstyled'} _placeholder={{ color: "#D7A989" }} />
                 </Box>
                 <Button
                   w="100%"
@@ -53,7 +53,7 @@ export const Contact = ({ seo, locale }) => {
                 >{locale && locale !== 'fr-FR' ? 'Send' : 'Envoyer'}</Button>
               </Stack>
             </Center>
-            <Text textAlign={"center"} fontSize="sm" fontStyle="italic" color="white">{locale && locale !== 'fr-FR' ? 'I accept the processing of personal data' : 'J’accepte le traitement des données personnelles'}</Text>
+            <Text textAlign={"center"} fontSize="xs" fontStyle="italic" color="white">{locale && locale !== 'fr-FR' ? 'I accept the processing of personal data' : 'J’accepte le traitement des données personnelles'}</Text>
           </form>
           <MapAndContact locale={locale} />
           <ByLuxuriaCard locale={locale} />

@@ -39,6 +39,7 @@ export const HomeList = ({img, title, list}) => {
                         py={4}
                         px={{base:4, md:8}}
                         borderTop="1px solid #D7A989"
+                        fontFamily={"proxima-nova"}
                     >
                         <Image
                             width={{ base: "25px", md: "50px" }}

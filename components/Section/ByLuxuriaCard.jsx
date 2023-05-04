@@ -31,7 +31,7 @@ export const ByLuxuriaCard = ({locale}) => {
                 size='2xl'
                 color="white"
             >{data?.attributes.title}</MotionHeading>
-            <Box w={{base:'100vw', md:'80vw'}} px={8}>
+            <Box w={{base:'100vw', md:'80vw'}} px={8} fontFamily={"proxima-nova"}>
                 <MotionText
                     initial={{ scale: 0, filter:"blur(10px)" }}
                     whileInView={{ scale: 1, filter:"blur(0px)" }}

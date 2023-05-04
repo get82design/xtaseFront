@@ -1,9 +1,12 @@
-import { Box, Button, Center, Flex, Heading, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Center, Flex, HStack, Heading, Stack, Text } from "@chakra-ui/react"
 import { useContext, useEffect, useRef, useState } from "react"
 import { getStrapiMedia } from "../../lib/media"
-import { MdKeyboardArrowRight } from "react-icons/md";
 import { GlobalContext } from "../../pages/_app";
 import { useDialogContext } from "../Dialog/DialogContext";
+import { ChevronRightIcon, ArrowForwardIcon } from "@chakra-ui/icons"
+import { motion } from "framer-motion";
+
+const MotionBox = motion(Box)
 
 export const ByLuxuriaSection = ({ data }) => {
     const { urlReservation } = useContext(GlobalContext);
@@ -22,33 +25,55 @@ export const ByLuxuriaSection = ({ data }) => {
             <Stack
                 spacing={4}
                 px={4}
+                fontFamily={"proxima-nova"}
             >
                 <Heading
                     size={{ base: 'sm', md: "md" }}
                     textTransform={'uppercase'}
                     className="text-primary"
                     fontWeight={"normal"}
+                    letterSpacing={'widest'}
                     mb={4}
                 >{section.title}</Heading>
                 <Text
                     color="white"
                     fontSize={{ base: 'sm', md: 'md' }}
+                    lineHeight={"8"}
+                    letterSpacing={'wide'}
                 >{section.content}</Text>
                 <Text
                     color="white"
                     fontSize={{ base: 'sm', md: 'md' }}
+                    lineHeight={"8"}
+                    letterSpacing={'wide'}
                 >{section.contentTwo}</Text>
                 <Box>
                     <Button
+                        aria-label="playForward"
+                        variant="unstyled"
+                        size="lg"
+                        role="group"
                         onClick={() => urlReservation
                             ? window.open(urlReservation, "_blank")
                             : setOpenDialog(true)
-                        }
-                        rightIcon={<MdKeyboardArrowRight />}
-                        color="#D7A989"
-                        textTransform={"uppercase"}
-                        variant="link"
-                    >Réserver</Button>
+                        }>
+                        <HStack spacing="3" position="relative">
+                            <Text color="#D7A989">RESERVER</Text>
+                            <Box _groupHover={{opacity:0}} transition="opacity 0.5s">
+                                <MotionBox mt="-1"
+                                    initial={{x:0}}
+                                    animate={{x:[-5, 0, -5]}}
+                                    transition={{duration: 0.5, repeat: Infinity, ease: "linear"}}
+                                >
+                                    <ChevronRightIcon color="#D7A989"/>
+                                </MotionBox>
+                            </Box>
+                            <ArrowForwardIcon opacity="0" color="#D7A989" _groupHover={{opacity:1}} transition="opacity 1s" position="absolute" top="1" right="1"/>
+                        </HStack>
+                        <Flex w="full" display="flex" justifyContent={"flex-end"}>
+                            <Box w="full" h="1px" bgColor="#D7A989" transition="width 0.5s ease" _groupHover={{width:"0"}}></Box>
+                        </Flex>
+                    </Button>
                 </Box>
             </Stack>
         )

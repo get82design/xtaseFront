@@ -37,6 +37,9 @@ export const SliderImage = ({ datas }) => {
                             top={'calc(40% - 15px)'}
                             left={"36px"}
                             zIndex={2}
+                            color="#D7A989"
+                            borderColor={"#D7A989"}
+                            _hover={{backgroundColor: "white", opacity: 0.5}}
                             rounded={'full'}
                             icon={<MdKeyboardArrowLeft />}
                         />
@@ -50,7 +53,10 @@ export const SliderImage = ({ datas }) => {
                             position="absolute"
                             top={'calc(40% - 15px)'}
                             right={"36px"}
+                            color="#D7A989"
+                            borderColor={"#D7A989"}
                             zIndex={2}
+                            _hover={{backgroundColor: "white", opacity: 0.5}}
                             rounded={'full'}
                             icon={<MdKeyboardArrowRight />}
                         />
@@ -71,10 +77,11 @@ export const SliderImage = ({ datas }) => {
                                         <Heading
                                             as="h3"
                                             fontFamily={'meno-banner'}
-                                            size='xl'
+                                            fontSize='4xl'
                                             color="white"
+                                            fontWeight={"semibold"}
                                         >{data.attributes.title}</Heading>
-                                        <Text fontSize='xl' color="white">{data.attributes.desc}</Text>
+                                        <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white">{data.attributes.desc}</Text>
                                     </Stack>
                                 </Center>
                             </>

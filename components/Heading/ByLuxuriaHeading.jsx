@@ -12,13 +12,15 @@ export const ByLuxuriaHeading = ({ data }) => {
                 initial={{ filter:"blur(10px)" }}
                 animate={{ filter:"blur(0px)" }}
                 transition={{ duration: 1 }}
-                w='80%'
+                w='100%'
                 h='100vh'
                 position='relative'
                 bgImage={getStrapiMedia(data?.attributes.imgHero)}
                 bgSize="cover"
                 bgPosition="center"
             >
+                <Box position="absolute" w="100%" h="20vh" top={0} left={0} bgGradient="linear(to-b, #0C0023, transparent)"></Box>
+                <Box position="absolute" w="100%" h="80vh" bottom={0} left={0} bgGradient="linear(to-t, #0C0023, transparent)"></Box>
                 <Box
                     position='absolute'
                     top={0}
@@ -56,7 +58,9 @@ export const ByLuxuriaHeading = ({ data }) => {
                         fontWeight={'normal'}
                         fontFamily="proxima-nova"
                         as='h2'
+                        letterSpacing={'wider'}
                         size={{base:'sm', md:'md'}}
+                        lineHeight={"8"}
                         color="white"
                     >{data?.attributes.hero.subTitle}</MotionHeading> 
                 </Flex>  
@@ -73,7 +77,10 @@ export const ByLuxuriaHeading = ({ data }) => {
                 >
                     <Text
                         color="white"
-                        fontSize={{base:'sm', md:'lg'}}
+                        fontFamily={"proxima-nova"}
+                        fontSize={{ base: 'sm', md: 'md' }}
+                        fontWeight={'light'}
+                        letterSpacing={'widest'}
                         textTransform={"uppercase"}
                     >Scroll to discover</Text>
                 </MotionFlex>

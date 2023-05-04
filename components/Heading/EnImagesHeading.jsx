@@ -8,7 +8,7 @@ export const EnImagesHeading = ({ data }) => {
             justifyContent={'center'}
             align='center'
             flexDirection={'column'}
-            gap={8}
+            gap={4}
         >
             <Heading
                 textAlign={'center'}
@@ -23,7 +23,9 @@ export const EnImagesHeading = ({ data }) => {
                 fontWeight={'normal'}
                 fontFamily="proxima-nova"
                 as='h2'
-                size='md'
+                letterSpacing={'wider'}
+                size={{base:'sm', md:'md'}}
+                lineHeight={"8"}
                 className="text-primary"
                 textTransform={"uppercase"}
             >{data?.attributes.hero.subTitle}</Heading> 

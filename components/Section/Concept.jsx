@@ -1,6 +1,9 @@
-import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Flex, HStack, Heading, Stack, Text } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
+import { ChevronRightIcon, ArrowForwardIcon } from "@chakra-ui/icons"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
 const MotionHeading = motion(Heading)
 const MotionText = motion(Text)
@@ -9,6 +12,8 @@ const MotionBox = motion(Box)
 export const Concept = ({data}) => {
     const refConcept = useRef(null)
     const [heightConcept, setHeightConcept] = useState(0)
+    const router = useRouter()
+    const locale = router.locale
     
     useEffect(() => {
         if (data && refConcept) {
@@ -26,7 +31,7 @@ export const Concept = ({data}) => {
         >
             <Stack
                 ref={refConcept}
-                w={{base:"90vw", md: "70vw"}}
+                w={{base:"90vw", md: "80vw"}}
                 border={'1px solid #D7A989'}
                 px={{base:4, md:20}}
                 py={{base:8, md:16}}
@@ -34,40 +39,64 @@ export const Concept = ({data}) => {
                 position={'relative'}
                 spacing={4}
             >
-            <MotionHeading
-                initial={{ filter:"blur(10px)" }}
-                whileInView={{ filter:"blur(0px)" }}
-                transition={{duration: 1}}
-                viewport={{ once: true }}
-                pb={4}
-                maxWidth={{base:'80vw', md:'70vw'}}
-                textAlign={'center'}
-                fontWeight={'normal'}
-                fontFamily="meno-banner"
-                as='h2'
-                size={{base:'xl', md:'2xl'}}
-                color="white"
-            >{data?.conceptTitle}</MotionHeading>
-            <MotionText
-                initial={{ scale: 0, filter:"blur(10px)" }}
-                whileInView={{ scale: 1, filter:"blur(0px)" }}
-                transition={{duration: 1, delay: 0.5}}
-                viewport={{ once: true }}
-                fontSize={{base:'md', md:'xl'}}
-                textAlign={'center'}
-                py={2}
-                color="white"
-            >{data?.conceptContentOne}</MotionText>
-            <MotionText
-                initial={{ scale: 0, filter:"blur(10px)" }}
-                whileInView={{ scale: 1, filter:"blur(0px)" }}
-                transition={{duration: 1, delay: 1}}
-                viewport={{ once: true }}
-                fontSize={{base:'md', md:'xl'}}
-                textAlign={'center'}
-                pt={2}
-                color="white"
-            >{data?.conceptContentTwo}</MotionText>
+                <MotionHeading
+                    initial={{ filter:"blur(10px)" }}
+                    whileInView={{ filter:"blur(0px)" }}
+                    transition={{duration: 1}}
+                    viewport={{ once: true }}
+                    pb={4}
+                    maxWidth={{base:'90vw', md:'80vw'}}
+                    textAlign={'center'}
+                    fontWeight={'normal'}
+                    fontFamily="meno-banner"
+                    as='h2'
+                    size={{base:'xl', md:'2xl'}}
+                    color="white"
+                >{data?.conceptTitle}</MotionHeading>
+                <MotionText
+                    initial={{ scale: 0, filter:"blur(10px)" }}
+                    whileInView={{ scale: 1, filter:"blur(0px)" }}
+                    transition={{duration: 1, delay: 0.5}}
+                    viewport={{ once: true }}
+                    fontSize={{base:'md', md:'xl'}}
+                    textAlign={'center'}
+                    fontFamily={"proxima-nova"}
+                    py={2}
+                    color="white"
+                >{data?.conceptContentOne}</MotionText>
+                <MotionText
+                    initial={{ scale: 0, filter:"blur(10px)" }}
+                    whileInView={{ scale: 1, filter:"blur(0px)" }}
+                    transition={{duration: 1, delay: 1}}
+                    viewport={{ once: true }}
+                    fontSize={{base:'md', md:'xl'}}
+                    textAlign={'center'}
+                    fontFamily={"proxima-nova"}
+                    pt={2}
+                    color="white"
+                >{data?.conceptContentTwo}</MotionText>
+                <Flex justifyContent={"center"} w="100%" zIndex={1000}>
+                    <Link href={locale && locale !== 'fr-FR' ? "/en/by-luxuria" : "by-luxuria"}>
+                        <Button aria-label="playForward" variant="unstyled" size="lg" role="group">
+                            <HStack spacing="3" position="relative">
+                                <Text color="#D7A989">EN SAVOIR PLUS</Text>
+                                <Box _groupHover={{opacity:0}} transition="opacity 0.5s">
+                                    <MotionBox mt="-1"
+                                        initial={{x:0}}
+                                        animate={{x:[-5, 0, -5]}}
+                                        transition={{duration: 0.5, repeat: Infinity, ease: "linear"}}
+                                    >
+                                        <ChevronRightIcon color="#D7A989"/>
+                                    </MotionBox>
+                                </Box>
+                                <ArrowForwardIcon opacity="0" color="#D7A989" _groupHover={{opacity:1}} transition="opacity 1s" position="absolute" top="1" right="1"/>
+                            </HStack>
+                            <Flex w="full" display="flex" justifyContent={"flex-end"}>
+                                <Box w="full" h="1px" bgColor="#D7A989" transition="width 0.5s ease" _groupHover={{width:"0"}}></Box>
+                            </Flex>
+                        </Button>
+                    </Link>
+                </Flex>
             </Stack>
             <MotionBox
                 display={{base: 'none', md:'initial'}}
@@ -77,7 +106,7 @@ export const Concept = ({data}) => {
                 viewport={{ once: true }}
                 rounded="lg"
                 position={'absolute'}
-                w={{base:"90vw", md:'70vw'}}
+                w={{base:"90vw", md:'80vw'}}
                 h={`${heightConcept}px`}
                 border="1px dashed #D7A989"
             ></MotionBox>

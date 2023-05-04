@@ -17,6 +17,7 @@ export const ContactHeading = ({ data }) => {
                     bgSize="cover"
                     bgPosition="center"
                     filter='grayscale(40%)'
+                    fontFamily={"proxima-nova"}
                 >
                     <Box
                         position='absolute'
@@ -35,13 +36,13 @@ export const ContactHeading = ({ data }) => {
                         h="80vh"
                         bgGradient="radial(transparent, #0C0023 70%)"
                     ></Box>
-                    <Flex
+                    {/* <Flex
                         w="100%"
                         position="absolute"
                         h={{base: "100px", md: "196px"}}
                         bgGradient="radial(#FFFFFF, transparent 40%)"
                         opacity={0.2}
-                    ></Flex>
+                    ></Flex> */}
                     <Flex
                         position={'absolute'}
                         top={{base:'35vh', md:'40vh'}}
@@ -50,7 +51,7 @@ export const ContactHeading = ({ data }) => {
                         justifyContent={'center'}
                         align='center'
                         flexDirection={'column'}
-                        gap={8}
+                        gap={4}
                     >
                         <MotionBox display={{md: 'none'}}>
                             <Button
@@ -90,7 +91,9 @@ export const ContactHeading = ({ data }) => {
                             fontFamily="proxima-nova"
                             cursor="default"
                             as='h2'
-                            size={{ base: 'sm', md: 'md' }}
+                            letterSpacing={'wider'}
+                            size={{base:'sm', md:'md'}}
+                            lineHeight={"8"}
                             color="#D7A989"    
                         >{data?.attributes.hero.subTitle}</MotionHeading> 
                     </Flex>

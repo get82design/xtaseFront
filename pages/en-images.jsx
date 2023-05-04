@@ -65,6 +65,7 @@ const EnImages = ({ seo, locale }) => {
                         py={32}
                         w="100%"
                         justifyContent={"center"}
+                        fontFamily={"proxima-nova"}
                     >
                         <Flex w={{ base: '90vw', md: '70vw' }} cursor="pointer" zIndex={1100} flexWrap={'wrap'}>
                             <Box align="center" w={{ base: '50%', lg: "25%" }} fontFamily={"proxima-nova"}>
