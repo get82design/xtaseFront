@@ -240,21 +240,30 @@ export const Nav = () => {
                                         </Box>
                                     ))}
                                 </List>
-                                <Button className="resaButton"
+                                {/* <Button className="startButton"
                                     display={{md:"none"}}
-                                    w={'250px'}
-                                    h={"55px"}
+                                    // w={'250px'}
+                                    // h={"55px"}
                                     mt={4}
                                     fontFamily={'proxima-nova'}
                                     textTransform='uppercase'
-                                    style={{color: "white", fontSize: "16px"}}
+                                    // style={{color: "white", fontSize: "16px"}}
                                     rounded={'none'}
                                     shadow='lg'
                                     onClick={() => urlReservation
                                         ? window.open(urlReservation, "_blank")
                                         : setOpenDialog(true)
-                                    }
-                                >Réserver</Button>
+                                    } > */}
+                                <Flex mt={8} w="100%" justifyContent={"center"}>
+                                    <Button className="startButton" aria-label="startButton" rounded="full" fontWeight={'bold'} 
+                                        size="lg" px="12" onClick={() => urlReservation
+                                            ? window.open(urlReservation, "_blank")
+                                            : setOpenDialog(true)
+                                        }
+                                    >
+                                        Réserver
+                                    </Button>
+                                </Flex>
                             </Box>
                             <Flex
                                 justifyContent={"center"}

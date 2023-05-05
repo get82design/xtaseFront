@@ -15,7 +15,7 @@ export const Footer = ({ locale }) => {
         var urlcourante = window.location.pathname; 
         console.log('url', urlcourante)
         setPageActive(urlcourante)
-    }, [])
+    }, [window.location.pathname])
     return (
         <Stack
             spacing={4}
@@ -38,7 +38,7 @@ export const Footer = ({ locale }) => {
             >
                 {navLinks.length > 0 && navLinks.map((link) => {
                     return (
-                        pageActive !== link.attributes.href &&
+                        (pageActive !== link.attributes.href) &&
                             <Link 
                                 style={{ textTransform: "uppercase" }}
                                 color="white"
