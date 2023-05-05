@@ -15,7 +15,7 @@ export const Footer = ({ locale }) => {
         var urlcourante = window.location.pathname; 
         console.log('url', urlcourante)
         setPageActive(urlcourante)
-    }, [window.location.pathname])
+    }, [])
     return (
         <Stack
             spacing={4}
