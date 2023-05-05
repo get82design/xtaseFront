@@ -59,8 +59,10 @@ export const EnImagesSection = ({ data }) => {
             {data?.galleryImgs &&
             <Box py={16}> 
                 <Swiper
+                    id="my-gallery"
                     slidesPerView={nbImg}
                     spaceBetween={10}
+                    grabCursor={true}
                     freeMode={true}
                     loop={true}
                     navigation={true}
@@ -69,7 +71,7 @@ export const EnImagesSection = ({ data }) => {
                 >
                     {data?.galleryImgs.data.map((img, idx) => {
                     return (
-                        <SwiperSlide key={idx}><Image src={getStrapiMediaInArray(img)} alt="" /></SwiperSlide>
+                        <SwiperSlide key={idx}><Image src={getStrapiMediaInArray(img)} alt="" loading="lazy" /></SwiperSlide>
                     )
                     })}
                 </Swiper>

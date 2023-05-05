@@ -90,8 +90,9 @@ export const HomeHeading = ({data}) => {
             animate={{ scale: 1 }}
             transition={{delay:1.2, duration: 0.3}}
           >
-            <Button
-              className="resaButton"
+            {/* <Button
+              // className="resaButton"
+              className="startButton"
               w={{base:'250px', md:"330px"}}
               h={{base:"55px", md:"65px"}}
               mt={4}
@@ -104,7 +105,12 @@ export const HomeHeading = ({data}) => {
                 ? window.open(urlReservation, "_blank")
                 : setOpenDialog(true)
               }
-              >{data?.buttonResa.label}</Button>
+              >{data?.buttonResa.label}</Button> */}
+            <Button className="startButton" aria-label="startButton" rounded="full" fontWeight={'bold'} 
+                size="lg" px="12" 
+            >
+              {data?.buttonResa.label}   
+            </Button>
           </MotionBox>
         </Flex> 
       }

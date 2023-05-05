@@ -48,7 +48,8 @@ export const Contact = ({ seo, locale }) => {
                   w="100%"
                   fontFamily={'proxima-nova'}
                   textTransform='uppercase'
-                  style={{ color: "white", fontSize: "14px", backgroundColor: '#D7A989' }}
+                  // style={{ color: "white", fontSize: "14px", backgroundColor: '#D7A989' }}
+                className="startButtonTwo"
                   rounded={'none'}
                 >{locale && locale !== 'fr-FR' ? 'Send' : 'Envoyer'}</Button>
               </Stack>

@@ -142,7 +142,7 @@ export const Nav = () => {
             {/* DRAWER WITH MENU */}
             <Drawer onClose={onClose} isOpen={isOpen} size={"xl"}>
                 <DrawerOverlay />
-                <DrawerContent>
+                <DrawerContent style={{lg:{ maxWidth: '80vw'}}}>
                     <DrawerBody p={0}>
                         <Box position="relative" w="100%" h="100vh">
                             <Box
@@ -183,9 +183,9 @@ export const Nav = () => {
                                 pt={8}
                                 w="100%"
                             >
-                                <Flex justifyContent={{base: "center", xl:"start"}} w="100%">
+                                <Flex /*justifyContent={{base: "center", xl:"start"}}*/ justifyContent={"center"} w="100%">
                                     <Img
-                                        ml={{base:-8, lg:-32, xl:60}}
+                                        ml={{base:-4, lg:-12, xl:-24}}
                                         src="/images/logoColor.png"
                                         // style={{ width: "269px", height: "132px" }}
                                         width={{base:"135px", md:"200px"}}
@@ -193,7 +193,7 @@ export const Nav = () => {
                                         alt="Logo Xtase by Luxuria"
                                     />
                                 </Flex>
-                                <List spacing={2} pt={12} ml={{base:12, md:24}}>
+                                <List spacing={2} pt={20} ml={{base:12, md:24, lg:36, xl:48}}>
                                     {data && data.map((navLink, idx=0) => (
                                         <Box
                                             key={idx}
@@ -210,7 +210,7 @@ export const Nav = () => {
                                                 <ListItem
                                                     display="flex"
                                                     pb="5"
-                                                    pt="2"
+                                                    pt="4"
                                                     alignItems={"center"}
                                                     cursor="pointer"
                                                     color="rgba(255,255,255,0.3)"
@@ -231,7 +231,7 @@ export const Nav = () => {
                                                         fontSize="sm"
                                                     >{navLink.attributes.num}</Text>
                                                     <Text
-                                                        fontSize={{ base: "2xl", md: "32px" }}
+                                                        fontSize={{ base: "2xl", md: "28px" }}
                                                         lineHeight="1"
                                                         fontWeight="light"
                                                     >{navLink.attributes.label}</Text>
