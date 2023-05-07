@@ -30,6 +30,7 @@ export const HomeHeading = ({data}) => {
         h="80vh"
         display={{ md: 'none' }}
         bgSize="cover"
+        bgPosition={"center"}
         bgImage={getStrapiMedia(data.heroMobileImg)}
       ></Box>
       {/* overlay sur slider */}
@@ -39,7 +40,7 @@ export const HomeHeading = ({data}) => {
         left={0}
         w='100%'
         h="80vh"
-        bgGradient="radial(rgba(12,0,35,0.2), #0C0023 80%)"></Box>
+        bgGradient="radial(rgba(12,0,35,0.4), #0C0023 80%)"></Box>
       {/* Title */}
       {data &&
         <Flex
@@ -76,7 +77,7 @@ export const HomeHeading = ({data}) => {
               maxWidth={{base:'88vw', md:'50vw'}}
               textAlign={'center'}
               fontFamily="proxima-nova"
-              fontWeight={'medium'}
+              fontWeight={{base:'light', md:'medium'}}
               as='h2'
               // size={{base:'sm', md:'md'}}
               fontSize={{ base: "16px", md: "18px" }}
@@ -106,8 +107,11 @@ export const HomeHeading = ({data}) => {
                 : setOpenDialog(true)
               }
               >{data?.buttonResa.label}</Button> */}
-            <Button className="startButton" aria-label="startButton" rounded="full" fontWeight={'bold'} 
-                size="lg" px="12" 
+            <Button className="startButton" textTransform={"uppercase"} aria-label="startButton" rounded="full" fontWeight={'bold'} 
+                size="lg" px="12" mt="8" onClick={() => urlReservation
+                ? window.open(urlReservation, "_blank")
+                : setOpenDialog(true)
+              }
             >
               {data?.buttonResa.label}   
             </Button>

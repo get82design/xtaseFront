@@ -66,7 +66,7 @@ export const Layout = ({ children, logo, copyright }) => {
                     href={location}
                     locale={router.locale === 'en' ? 'fr-FR' : 'en'}
                 >
-                    <Box color={'white'} cursor="pointer"
+                    <Box color={'#D7A989'} cursor="pointer"
                     fontSize="sm">
                         {router.locale === 'en' ? 'FR.' : 'ENG.'}
                     </Box>

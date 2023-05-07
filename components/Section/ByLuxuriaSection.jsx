@@ -51,7 +51,7 @@ export const ByLuxuriaSection = ({ data }) => {
                     <Button
                         aria-label="playForward"
                         variant="unstyled"
-                        size="lg"
+                         size={{base: 'md', md:"lg"}} fontWeight={'medium'}
                         role="group"
                         onClick={() => urlReservation
                             ? window.open(urlReservation, "_blank")

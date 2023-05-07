@@ -3,10 +3,14 @@ import { useGetMapAndContact, useGetSocials } from "../../hook/hook"
 import { getStrapiMedia } from "../../lib/media"
 import { Box, Button, Flex, Heading, HStack, Stack, Text } from "@chakra-ui/react"
 import {FaWhatsapp} from "react-icons/fa"
+import {MdMailOutline} from "react-icons/md"
+import { useContext } from "react"
+import { GlobalContext } from "../../pages/_app"
 
 export const MapAndContact = ({locale}) => {
     const { data: dataSocials } = useGetSocials()
     const socials = dataSocials || []
+    const { messagerie } = useContext(GlobalContext);
     const { data: mapAndContact } = useGetMapAndContact(locale)
 
 
@@ -23,9 +27,9 @@ export const MapAndContact = ({locale}) => {
             <Box display={{md: 'none'}} w="100%" mt={8}>
                 <HeadingContact mapAndContact={mapAndContact} />
             </Box>
-            <Flex w="100%" justifyContent={'center'} py={{base:8,md:24}} px={8} fontFamily={"proxima-nova"}>
+            <Flex w="100%" justifyContent={'center'} py={{base:8,md:24}} fontFamily={"proxima-nova"}>
                 <Flex w={{base: "100%", lg:'80vw'}} justifyContent={"space-between"}>
-                    <Stack w={"50%"} display={{base: 'none', md: 'initial'}} color="white" spacing={6}>
+                    <Stack px={8} w={"50%"} display={{base: 'none', md: 'initial'}} color="white" spacing={6}>
                         <Box w="100%">
                             <HeadingContact mapAndContact={mapAndContact} />
                         </Box>
@@ -41,7 +45,7 @@ export const MapAndContact = ({locale}) => {
                         </Stack>
                         <Stack spacing={1}>
                             <Text color="#D7A989">{locale && locale !== "fr-FR" ? 'Social Messenger' : 'Messager social'}</Text>
-                            <Link href="https://wa.me/33660395848" target="_blank">
+                            <Link href={messagerie ? messagerie : "#"} target="_blank">
                                 <Text fontSize="xl">WhatsApp</Text>
                             </Link>
                         </Stack>
@@ -58,38 +62,43 @@ export const MapAndContact = ({locale}) => {
                             </HStack>
                         </Stack>
                     </Stack>
-                    <Stack mr={{base: 0, md:-28}} w={{base:"200%", md:"100%"}} position="relative" bgImage={getStrapiMedia(mapAndContact?.attributes.map)} bgSize="cover">
-                        <Box minH="450px" w="100%" bgGradient="radial(transparent, #0C0023 80%)"></Box>
+                    <Stack mr={{base: 0, md:-28}} w={{base:"200%", md:"100%"}} position="relative" bgImage={getStrapiMedia(mapAndContact?.attributes.map)} bgPosition="center" bgSize="cover">
+                        <Box minH="450px" w="100%" bgGradient={{ base:"radial(transparent, #0C0023 95%)" ,md:"radial(transparent, #0C0023 80%)"}}></Box>
                     </Stack>
                 </Flex>
             </Flex>
             <Box w="100%" display={{md: 'none'}}>
                 <Stack align={"center"} w="100%" spacing={12}>
-                    <Button
-                        variant="outline"
-                        leftIcon={<FaWhatsapp />}
-                        rounded="none"
-                        size="lg"
-                        style={{
-                            width: "260px",
-                            color: "#D7A989",
-                            fontWeight: 'normal',
-                            textTransform: "uppercase",
-                            backgroundColor:"rgba(255, 255, 255, 0.3)",
-                            border: "1px solid #D7A989",
-                        }}
-                    >Discutons</Button>
-                    <Button
-                        variant="ghost"
-                        leftIcon={<FaWhatsapp />}
-                        size="lg"
-                        style={{
-                            width: "260px",
-                            color: "#D7A989",
-                            fontWeight: 'normal',
-                            textTransform: "uppercase",
-                        }}
-                    >Discutons</Button>
+                    <Link href={messagerie ? messagerie : "#"} target="_blank">
+                        <Button
+                            variant="outline"
+                            leftIcon={<FaWhatsapp />}
+                            rounded="none"
+                            size="lg"
+                            style={{
+                                width: "260px",
+                                color: "#D7A989",
+                                fontWeight: 'light',
+                                textTransform: "uppercase",
+                                backgroundColor:"rgba(255, 255, 255, 0.15)",
+                                border: "1px solid #D7A989",
+                            }}
+                        >Discutons</Button>
+                    </Link>
+
+                    <Link href={`mailto:${mapAndContact?.attributes.mail}`} target="_blank">
+                        <Button
+                            variant="ghost"
+                            leftIcon={<MdMailOutline />}
+                            size="lg"
+                            style={{
+                                width: "260px",
+                                color: "#D7A989",
+                                fontWeight: 'light',
+                                textTransform: "uppercase",
+                            }}
+                        >Nous écrire</Button>
+                    </Link>
                 </Stack>
             </Box>
         </>

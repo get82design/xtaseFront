@@ -37,10 +37,10 @@ export const ByLuxuriaCard = ({locale}) => {
                     whileInView={{ scale: 1, filter:"blur(0px)" }}
                     transition={{duration: 1, delay: 0.5}}
                     viewport={{ once: true }}
-                    fontSize={{base:'md', md:'2xl'}}
-                    lineHeight={"10"}
+                    fontSize={{base:'md', md:'20px'}}
+                    lineHeight={{ base:'8', md:"10"}}
                     letterSpacing={"10"}
-                    textAlign={'center'}
+                    textAlign={{base:'left', md:'center'}}
                     py={2}
                     color="white"
                 >{data?.attributes.contentOne}</MotionText>
@@ -49,10 +49,10 @@ export const ByLuxuriaCard = ({locale}) => {
                     whileInView={{ scale: 1, filter:"blur(0px)" }}
                     transition={{duration: 1, delay: 1}}
                     viewport={{ once: true }}
-                    fontSize={{ base: 'md', md: '2xl' }}
-                    lineHeight={"10"}
+                    fontSize={{ base: 'md', md: '20px' }}
+                    lineHeight={{ base:'8', md:"10"}}
                     letterSpacing={"10"}
-                    textAlign={'center'}
+                    textAlign={{base:'left', md:'center'}}
                     py={2}
                     color="white"
                 >{data?.attributes.contentTwo}</MotionText>

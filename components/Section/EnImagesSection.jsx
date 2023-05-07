@@ -82,14 +82,14 @@ export const EnImagesSection = ({ data }) => {
                     <Button
                         aria-label="playForward"
                         variant="unstyled"
-                        size="lg"
+                        size={{base:'md', md:"lg"}}
                         role="group"
                         // onClick={() => urlReservation
                         //     ? window.open(urlReservation, "_blank")
                         //     : setOpenDialog(true)
                         // }
                     >
-                        <HStack spacing="3" position="relative">
+                        <HStack spacing="3" position="relative" fontWeight={'medium'}>
                             <Text color="#D7A989">{locale && locale !== 'fr-FR' ? "SEE MORE" : "VOIR PLUS"}</Text>
                             <Box _groupHover={{opacity:0}} transition="opacity 0.5s">
                                 <MotionBox mt="-1"

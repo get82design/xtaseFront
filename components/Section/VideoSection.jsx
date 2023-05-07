@@ -11,7 +11,7 @@ export const VideoSection = ({ data }) => {
     const [showTitle, setShowTitle] = useState(true)
     return (
         <>
-            <Box w="100%" px={0} py={24} position="relative">
+            <Box w="100%" px={0} py={{base: 8, md:24}} position="relative">
                 <video style={{width:'100%'}} autoPlay playsInline controls loop>
                     <source src={getStrapiMedia(data.backgroundVideo.bgVideo)} type="video/mp4" />
                 </video>
@@ -21,7 +21,7 @@ export const VideoSection = ({ data }) => {
                     w='100%'
                     align="center"
                     position="absolute"
-                    top="35%"
+                    top={{base:'20%', lg:"35%"}}
                     onClick={() => setShowTitle(false)}>
                     <MotionHeading
                         initial={{ filter:"blur(10px)" }}
@@ -34,7 +34,7 @@ export const VideoSection = ({ data }) => {
                         fontWeight={'normal'}
                         fontFamily="meno-banner"
                         as='h2'
-                        size='2xl'
+                        size={{base:"lg", md:'2xl'}}
                         color="white"
                     >{data?.backgroundVideo.titleOnVideo}</MotionHeading>
                     <MotionHeading
@@ -48,7 +48,7 @@ export const VideoSection = ({ data }) => {
                         fontWeight={'normal'}
                         fontFamily="proxima-nova"
                         as='h3'
-                        fontSize="18px"
+                        fontSize={{base: "16px", md:"18px"}}
                         color="#D7A989"
                     >{data?.backgroundVideo.subTitleOnVideo}</MotionHeading>
                     <Flex justifyContent={"center"} w="100%" pt={4}>

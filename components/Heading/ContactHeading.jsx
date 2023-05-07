@@ -11,7 +11,7 @@ export const ContactHeading = ({ data }) => {
         <Flex w='100%' justifyContent={"center"}>
             <Box
                     w='1000%'
-                    h='80vh'
+                    h={'60vh'}
                     position='relative'
                     bgImage={getStrapiMedia(data?.attributes.imgHero)}
                     bgSize="cover"
@@ -24,7 +24,7 @@ export const ContactHeading = ({ data }) => {
                         top={0}
                         left={0}
                         w='100%'
-                        h="80vh"
+                        h={'60vh'}
                         bgColor="#0C0023"
                         opacity={0.6}
                     ></Box>
@@ -33,7 +33,7 @@ export const ContactHeading = ({ data }) => {
                         top={0}
                         left={0}
                         w='100%'
-                        h="80vh"
+                        h={'60vh'}
                         bgGradient="radial(transparent, #0C0023 70%)"
                     ></Box>
                     {/* <Flex
@@ -45,7 +45,7 @@ export const ContactHeading = ({ data }) => {
                     ></Flex> */}
                     <Flex
                         position={'absolute'}
-                        top={{base:'35vh', md:'40vh'}}
+                        top={{base:'20vh', md:'30vh'}}
                         left={0}
                         w='100%'
                         justifyContent={'center'}
@@ -53,7 +53,7 @@ export const ContactHeading = ({ data }) => {
                         flexDirection={'column'}
                         gap={4}
                     >
-                        <MotionBox display={{md: 'none'}}>
+                        <MotionBox display={{md: 'none'}} mb={8}>
                             <Button
                                 variant="outline"
                                 leftIcon={<FaWhatsapp />}
@@ -62,9 +62,9 @@ export const ContactHeading = ({ data }) => {
                                 style={{
                                     width: "260px",
                                     color: "#D7A989",
-                                    fontWeight: 'normal',
+                                    fontWeight: 'light',
                                     textTransform: "uppercase",
-                                    backgroundColor:"rgba(255, 255, 255, 0.3)",
+                                    backgroundColor:"rgba(255, 255, 255, 0.15)",
                                     border: "1px solid #D7A989",
                                 }}
                             >Discutons</Button>
