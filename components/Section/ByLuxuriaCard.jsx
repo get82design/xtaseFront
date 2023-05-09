@@ -37,7 +37,8 @@ export const ByLuxuriaCard = ({locale}) => {
                     whileInView={{ scale: 1, filter:"blur(0px)" }}
                     transition={{duration: 1, delay: 0.5}}
                     viewport={{ once: true }}
-                    fontSize={{base:'md', md:'20px'}}
+                    fontSize={{ base: 'md', md: '20px' }}
+                    fontWeight={'light'}
                     lineHeight={{ base:'8', md:"10"}}
                     letterSpacing={"10"}
                     textAlign={{base:'left', md:'center'}}
@@ -51,6 +52,7 @@ export const ByLuxuriaCard = ({locale}) => {
                     viewport={{ once: true }}
                     fontSize={{ base: 'md', md: '20px' }}
                     lineHeight={{ base:'8', md:"10"}}
+                    fontWeight={'light'}
                     letterSpacing={"10"}
                     textAlign={{base:'left', md:'center'}}
                     py={2}
