@@ -107,7 +107,7 @@ export const HomeHeading = ({data}) => {
                 : setOpenDialog(true)
               }
               >{data?.buttonResa.label}</Button> */}
-            <Button className="startButton" textTransform={"uppercase"} aria-label="startButton" rounded="full" fontWeight={'bold'} 
+            <Button className="startButton" textTransform={"uppercase"} aria-label="startButton" rounded="full" fontWeight={'light'} 
                 size="lg" px="12" mt="8" onClick={() => urlReservation
                 ? window.open(urlReservation, "_blank")
                 : setOpenDialog(true)

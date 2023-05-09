@@ -52,7 +52,7 @@ export const ByLuxuriaSection = ({ data }) => {
                         aria-label="playForward"
                         variant="unstyled"
                         size={{ base: 'md', md: "lg" }}
-                        fontWeight={'normal'}
+                        fontWeight={'light'}
                         role="group" ml={-6}
                         onClick={() => urlReservation
                             ? window.open(urlReservation, "_blank")

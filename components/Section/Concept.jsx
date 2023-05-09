@@ -77,7 +77,7 @@ export const Concept = ({data}) => {
                 >{data?.conceptContentTwo}</MotionText>
                 <Flex justifyContent={"center"} w="100%" zIndex={1000}>
                     <Link href={locale && locale !== 'fr-FR' ? "/en/by-luxuria" : "by-luxuria"}>
-                        <Button aria-label="playForward" variant="unstyled" size={{base: 'md', md:"lg"}} fontWeight={'medium'} role="group">
+                        <Button aria-label="playForward" variant="unstyled" size={{base: 'md', md:"lg"}} fontWeight={'light'} role="group">
                             <HStack spacing="3" position="relative">
                                 <Text color="#D7A989">EN SAVOIR PLUS</Text>
                                 <Box _groupHover={{opacity:0}} transition="opacity 0.5s">

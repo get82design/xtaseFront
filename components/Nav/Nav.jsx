@@ -254,7 +254,7 @@ export const Nav = () => {
                                         ? window.open(urlReservation, "_blank")
                                         : setOpenDialog(true)
                                     } > */}
-                                <Flex mt={8} w="100%" justifyContent={"center"}>
+                                {/* <Flex mt={8} w="100%" justifyContent={"center"}>
                                     <Button className="startButton" aria-label="startButton" rounded="full" fontWeight={'bold'} 
                                         size="lg" px="12" onClick={() => urlReservation
                                             ? window.open(urlReservation, "_blank")
@@ -263,7 +263,7 @@ export const Nav = () => {
                                     >
                                         Réserver
                                     </Button>
-                                </Flex>
+                                </Flex> */}
                             </Box>
                             <Flex
                                 justifyContent={"center"}

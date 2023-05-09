@@ -54,7 +54,7 @@ export const Contact = ({ seo, locale }) => {
                 >{locale && locale !== 'fr-FR' ? 'Send' : 'Envoyer'}</Button>
               </Stack>
             </Center>
-            <Text textAlign={"center"} mt={2} fontSize="xs" fontStyle="italic" color="white">{locale && locale !== 'fr-FR' ? 'I accept the processing of personal data' : 'J’accepte le traitement des données personnelles'}</Text>
+            <Text textAlign={"center"} mt={2} fontSize="xs" fontWeight={'light'} fontStyle="italic" color="white">{locale && locale !== 'fr-FR' ? 'I accept the processing of personal data' : 'J’accepte le traitement des données personnelles'}</Text>
           </form>
           <MapAndContact locale={locale} />
           <ByLuxuriaCard locale={locale} />

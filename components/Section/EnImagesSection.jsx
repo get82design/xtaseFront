@@ -89,7 +89,7 @@ export const EnImagesSection = ({ data }) => {
                         //     : setOpenDialog(true)
                         // }
                     >
-                        <HStack spacing="3" position="relative" fontWeight={'medium'}>
+                        <HStack spacing="3" position="relative" fontWeight={'light'}>
                             <Text color="#D7A989">{locale && locale !== 'fr-FR' ? "SEE MORE" : "VOIR PLUS"}</Text>
                             <Box _groupHover={{opacity:0}} transition="opacity 0.5s">
                                 <MotionBox mt="-1"
