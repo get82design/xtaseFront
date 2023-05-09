@@ -3,7 +3,7 @@ import { Flex, Heading } from "@chakra-ui/react"
 export const EnImagesHeading = ({ data }) => {
     return (
         <Flex
-            pt={'20vh'}
+            pt={'10vh'}
             w='100%'
             justifyContent={'center'}
             align='center'

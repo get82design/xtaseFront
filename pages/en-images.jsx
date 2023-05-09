@@ -62,7 +62,7 @@ const EnImages = ({ seo, locale }) => {
                 <>
                     <EnImagesHeading data={data} />
                     <Flex
-                        py={32}
+                        py={20}
                         w="100%"
                         justifyContent={"center"}
                         fontFamily={"proxima-nova"}

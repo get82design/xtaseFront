@@ -73,6 +73,7 @@ export const ByLuxuriaHeading = ({ data }) => {
                     left={0}
                     w="100%"
                     p={8}
+                    mb={{base:8, md:0}}
                     justifyContent={'center'}
                 >
                     <Text

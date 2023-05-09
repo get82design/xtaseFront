@@ -127,7 +127,7 @@ export const Nav = () => {
                                 mr={-10}
                                 onClick={onTest}
                             >
-                                <Text textAlign={"center"} textTransform={'uppercase'} fontWeight={"normal"} letterSpacing={"wider"} fontSize="xs">Menu</Text>
+                                <Text textAlign={"center"} textTransform={'uppercase'} fontWeight={"light"} letterSpacing={"wider"} fontSize="xs">Menu</Text>
                                 <HamburgerIcon transform={'rotate(90deg)'} />
                             </MotionHStack>
                         </HStack>
@@ -321,6 +321,8 @@ export const Nav = () => {
                                 >
                                     <Text
                                         textAlign={"center"}
+                                        textTransform={'uppercase'}
+                                        fontWeight={'light'}
                                         pb={0}
                                         fontSize="xs"
                                     >{(locale && locale !== 'fr-FR') ? "Close" : "Fermer"}</Text>

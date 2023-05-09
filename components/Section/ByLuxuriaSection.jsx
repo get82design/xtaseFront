@@ -128,6 +128,7 @@ export const ByLuxuriaSection = ({ data }) => {
                         w={{ base: '100vw', md: '80vw' }}
                         color='white'
                         align="center"
+                        direction={{base: "column-reverse", lg:"row"}}
                         flexWrap={{ base: "wrap", lg: "nowrap" }}
                         px={4}
                     >
