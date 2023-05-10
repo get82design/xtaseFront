@@ -44,7 +44,7 @@ export const Footer = ({ locale }) => {
                         <Box w={locale && locale !== "fr-FR" ? "25%" : "33%"} textAlign="center" _first={{textAlign:"left"}} _last={{textAlign:"right"}} px={{base:4, md:8}} key={link.id}>
                             <Link 
                                 
-                                style={{ textTransform: "uppercase" }}
+                                style={{ textTransform: "uppercase", fontWeight: "400" }}
                                 color="white"
                                 href={link.attributes.href || "#"}
                                 className={"text-hover-primary"}
@@ -66,7 +66,8 @@ export const Footer = ({ locale }) => {
                             target="_blank"
                         >
                             <Text
-                                fontSize={{base:'md', md:'lg'}}
+                                fontSize={{ base: 'md', md: 'lg' }}
+                                fontWeight={'light'}
                                 className="text-primary"
                             >{social.attributes.label}</Text>
                         </a>

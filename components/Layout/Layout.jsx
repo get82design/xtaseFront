@@ -48,19 +48,19 @@ export const Layout = ({ children, logo, copyright }) => {
                 w="100%"
                 className={`header ${isActive}`}
             >
-                <Link href="/">
-                    <MotionImg
-                        initial={{ scale: 0.1, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                        ml={{ base: 0, lg: -12 }}
-                        mr={{base:-4, lg:0}}
-                        width={{base:"128px", md: "200px"}}
-                        height={{base:"66px", md: "103px"}}
-                        src="/images/logoColor.png"
-                        alt="Logo Xtase by Luxuria"
-                    />
-                </Link>
+                <MotionImg
+                    initial={{ scale: 0.1, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    ml={{ base: 0, lg: -12 }}
+                    mr={{base:-4, lg:0}}
+                    width={{base:"128px", md: "200px"}}
+                    height={{base:"66px", md: "103px"}}
+                    src="/images/logoColor.png"
+                    alt="Logo Xtase by Luxuria"
+                    cursor="pointer"
+                    onClick={() => window.location.href='/'}
+                />
             </Flex>
             <Nav />
             <Box zIndex="2000" position="fixed" top="4" right="4" color="white">

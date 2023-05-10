@@ -32,7 +32,7 @@ export const Nav = () => {
     const router = useRouter()
     const locale = router.locale
     console.log(locale)
-    const { urlReservation } = useContext(GlobalContext);
+    const { urlReservation, messagerie } = useContext(GlobalContext);
     const { setOpenDialog } = useDialogContext()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { data } = useGetNavLinks(locale)
@@ -88,6 +88,7 @@ export const Nav = () => {
                                 pb={1}
                                 px={3}
                                 bgColor="white"
+                                onClick={() => window.open(messagerie, '_blank')}
                             >
                                 <Icon
                                     width={"1.5em"}
