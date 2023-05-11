@@ -145,8 +145,21 @@ export const Nav = () => {
                 <DrawerOverlay />
                 <DrawerContent style={{lg:{ maxWidth: '80vw'}}}>
                     <DrawerBody p={0}>
-                        <Box position="relative" w="100%" h="100vh">
+                        <Box position="relative" w="100%" h="100vh"
+                            bgColor="#0C0023">
+                            <Flex
+                                w="100%"
+                                position="absolute"
+                                top={0}
+                                left={0}
+                                display={{md:"none"}}
+                                h={{base: "100px", md: "130px"}}
+                                justifyContent={'center'}
+                                p={8}
+                                bgGradient="radial(#061B61, #0C0023 60%)"
+                            ></Flex>
                             <Box
+                                display={{base:"none", md:'initial'}}
                                 position="absolute"
                                 top={0}
                                 left={0}
@@ -168,6 +181,7 @@ export const Nav = () => {
                                 opacity={0.5}
                             ></Box>
                             <Box
+                                display={{base:"none", md:'initial'}}
                                 position="absolute"
                                 top={0}
                                 left={0}
@@ -301,12 +315,21 @@ export const Nav = () => {
                                     )
                                 })}
                             </Flex>
+                            <CloseIcon
+                                position="absolute"
+                                top={4}
+                                left={4}
+                                color="#D7A989"
+                                display={{ md: 'none' }}
+                                zIndex={3100}
+                                onClick={onClose} />
                             <MotionBox
+                                display={{base: 'none', md: 'initial'}}
                                 initial={{ x: 42}}
                                 animate={{ x: 0 }}
                                 transition={{ duration: 1, delay: 1 }}
                                 position="absolute"
-                                right={0}
+                                right={"20px"}
                                 top={20}
                                 mr={-4}
                                 color="white"
@@ -319,6 +342,7 @@ export const Nav = () => {
                                     transform={"rotate(-90deg)"}
                                     onClick={onClose}
                                     cursor="pointer"
+                                    marginRight="-20px"
                                 >
                                     <Text
                                         textAlign={"center"}

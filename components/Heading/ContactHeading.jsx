@@ -58,11 +58,12 @@ export const ContactHeading = ({ data }) => {
                                 variant="outline"
                                 leftIcon={<FaWhatsapp />}
                                 rounded="none"
+                                fontWeight={'light'}
                                 size="lg"
                                 style={{
                                     width: "260px",
                                     color: "#D7A989",
-                                    fontWeight: 'light',
+                                    // fontWeight: 'light',
                                     textTransform: "uppercase",
                                     backgroundColor:"rgba(255, 255, 255, 0.15)",
                                     border: "1px solid #D7A989",

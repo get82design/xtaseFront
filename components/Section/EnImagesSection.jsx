@@ -10,6 +10,7 @@ import Link from "next/link";
 
 const MotionHeading = motion(Heading)
 const MotionBox = motion(Box)
+const MotionButton = motion(Button)
 
 export const EnImagesSection = ({ data }) => {
     const [nbImg, setNbImg] = useState(0)
@@ -79,7 +80,11 @@ export const EnImagesSection = ({ data }) => {
             }
             <Flex w="100%" justifyContent={'flex-end'}>
                 <Link href={locale && locale !== 'fr-FR' ? "/en/en-images" : "/en-images"}>
-                    <Button
+                    <MotionButton
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{duration: 1, delay: 0.5}}
+                        viewport={{ once: true }}
                         aria-label="playForward"
                         variant="unstyled"
                         size={{base:'md', md:"lg"}}
@@ -105,7 +110,7 @@ export const EnImagesSection = ({ data }) => {
                         <Flex w="full" display="flex" justifyContent={"flex-end"}>
                             <Box w="full" h="1px" bgColor="#D7A989" transition="width 0.5s ease" _groupHover={{width:"0"}}></Box>
                         </Flex>
-                    </Button>
+                    </MotionButton>
                 </Link>
             </Flex>
         </Box>

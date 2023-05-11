@@ -7,6 +7,9 @@ import { ChevronRightIcon, ArrowForwardIcon } from "@chakra-ui/icons"
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box)
+const MotionHeading = motion(Heading)
+const MotionButton = motion(Button)
+const MotionText = motion(Text)
 
 export const ByLuxuriaSection = ({ data }) => {
     const { urlReservation } = useContext(GlobalContext);
@@ -27,28 +30,42 @@ export const ByLuxuriaSection = ({ data }) => {
                 px={4}
                 fontFamily={"proxima-nova"}
             >
-                <Heading
+                <MotionHeading
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{duration: 0.5}}
+                    viewport={{ once: true }}
                     size={{ base: 'sm', md: "md" }}
                     textTransform={'uppercase'}
                     className="text-primary"
                     fontWeight={"normal"}
                     letterSpacing={'widest'}
                     mb={4}
-                >{section.title}</Heading>
-                <Text
+                >{section.title}</MotionHeading>
+                <MotionText
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{duration: 0.5, delay:0.5}}
                     color="white"
                     fontSize={{ base: 'sm', md: 'md' }}
                     lineHeight={"8"}
                     letterSpacing={'wide'}
-                >{section.content}</Text>
-                <Text
+                >{section.content}</MotionText>
+                <MotionText
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{duration: 0.5, delay:0.5}}
                     color="white"
                     fontSize={{ base: 'sm', md: 'md' }}
                     lineHeight={"8"}
                     letterSpacing={'wide'}
-                >{section.contentTwo}</Text>
+                >{section.contentTwo}</MotionText>
                 <Box>
-                    <Button
+                    <MotionButton
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{duration: 0.5, delay: 1}}
+                        viewport={{ once: true }}
                         aria-label="playForward"
                         variant="unstyled"
                         size={{ base: 'md', md: "lg" }}
@@ -74,7 +91,7 @@ export const ByLuxuriaSection = ({ data }) => {
                         <Flex w="full" display="flex" justifyContent={"flex-end"}>
                             <Box w="full" h="1px" bgColor="#D7A989" transition="width 0.5s ease" _groupHover={{width:"0"}}></Box>
                         </Flex>
-                    </Button>
+                    </MotionButton>
                 </Box>
             </Stack>
         )
@@ -114,12 +131,16 @@ export const ByLuxuriaSection = ({ data }) => {
                         <Box w={{ base: '100%', lg: '45%' }}>
                             <DescElm section={data?.attributes.sectionOne} />
                         </Box>
-                        <Box
+                        <MotionBox
+                            initial={{ opacity: 0, x: -40 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{duration: 0.5, delay: 1}}
+                            viewport={{ once: true }}
                             w={{ base: '100%', lg: '55%' }}
                             bgImage={getStrapiMedia(data?.attributes.sectionOne.img)}
                             h={{ base: "300px", md: "452px" }}
                             bgSize="cover"
-                        ></Box>
+                        ></MotionBox>
                     </Flex>
                     
                 }
@@ -133,12 +154,16 @@ export const ByLuxuriaSection = ({ data }) => {
                         flexWrap={{ base: "wrap", lg: "nowrap" }}
                         px={4}
                     >
-                        <Box
+                        <MotionBox
+                            initial={{ opacity: 0, x: 40 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{duration: 0.5, delay: 1}}
+                            viewport={{ once: true }}
                             w={{ base: '100%', lg: '55%' }}
                             bgImage={getStrapiMedia(data?.attributes.sectionTwo.img)}
                             h={{ base: "300px", md: "452px" }}
                             bgSize="cover"
-                        ></Box>
+                        ></MotionBox>
                         <Box w={{ base: '100%', lg: '45%' }}>
                             <DescElm section={data?.attributes.sectionTwo} />
                         </Box>
@@ -156,12 +181,16 @@ export const ByLuxuriaSection = ({ data }) => {
                         <Box w={{ base: '100%', lg: '45%' }}>
                             <DescElm section={data?.attributes.sectionThree} />
                         </Box>
-                        <Box
+                        <MotionBox
+                            initial={{ opacity: 0, x: -40 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{duration: 0.5, delay: 1}}
+                            viewport={{ once: true }}
                             w={{ base: '100%', lg: '55%' }}
                             bgImage={getStrapiMedia(data?.attributes.sectionThree.img)}
                             h={{ base: "300px", md: "452px" }}
                             bgSize="cover"
-                        ></Box>
+                        ></MotionBox>
                     </Flex>
                 }
             </Stack>

@@ -40,7 +40,7 @@ export const HomeHeading = ({data}) => {
         left={0}
         w='100%'
         h="80vh"
-        bgGradient="radial(rgba(12,0,35,0.4), #0C0023 80%)"></Box>
+        bgGradient={{base:"radial(rgba(12,0,35,0.6), #0C0023 80%)", md:"radial(rgba(12,0,35,0.4), #0C0023 80%)"}}></Box>
       {/* Title */}
       {data &&
         <Flex

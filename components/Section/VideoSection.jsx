@@ -12,7 +12,7 @@ export const VideoSection = ({ data }) => {
     return (
         <>
             <Box w="100%" px={0} py={{base: 8, md:24}} position="relative">
-                <video style={{width:'100%'}} autoPlay playsInline controls loop>
+                <video style={{width:'100%'}} muted autoPlay loop playsInline preload="auto">
                     <source src={getStrapiMedia(data.backgroundVideo.bgVideo)} type="video/mp4" />
                 </video>
                 <MotionStack

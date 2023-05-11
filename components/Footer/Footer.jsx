@@ -36,12 +36,18 @@ export const Footer = ({ locale }) => {
                 borderBottom="1px solid rgba(255,255,255, 0.5)"
                 fontSize={{ base: 'xs', md: 'lg' }}
             > */}
-            <Flex justifyContent={"space-between"} w="100%" py={6} color='white' borderBottom="1px solid rgba(255,255,255, 0.5)"
-                fontSize={{ base: 'xs', md: 'lg' }} textAlign={"center"}>
+            <Flex
+                justifyContent={"space-between"}
+                w="100%" py={6}
+                color='white'
+                borderBottom="1px solid rgba(255,255,255, 0.5)"
+                fontSize={{ base: 'xs', md: 'lg' }}
+                textAlign={"center"}
+                flexWrap={"wrap"}
+            >
                 {navLinks.length > 0 && navLinks.map((link) => {
                     return (
-                        (pageActive !== link.attributes.href) &&
-                        <Box w={locale && locale !== "fr-FR" ? "25%" : "33%"} textAlign="center" _first={{textAlign:"left"}} _last={{textAlign:"right"}} px={{base:4, md:8}} key={link.id}>
+                        <Box w={{base:"50%",lg:"25%"}} textAlign="center" /*_first={{textAlign:"left"}} _last={{textAlign:"right"}}*/ px={{base:4, md:8}} key={link.id}>
                             <Link 
                                 
                                 style={{ textTransform: "uppercase", fontWeight: "400" }}
@@ -51,8 +57,7 @@ export const Footer = ({ locale }) => {
                             >
                                 {link.attributes.label}
                             </Link>
-                        </Box>
-                        
+                        </Box> 
                     )
                 })}
                 </Flex>

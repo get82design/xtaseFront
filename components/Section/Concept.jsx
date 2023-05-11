@@ -8,6 +8,7 @@ import { useRouter } from "next/router"
 const MotionHeading = motion(Heading)
 const MotionText = motion(Text)
 const MotionBox = motion(Box)
+const MotionButton = motion(Button)
 
 export const Concept = ({data}) => {
     const refConcept = useRef(null)
@@ -75,9 +76,23 @@ export const Concept = ({data}) => {
                     pt={2}
                     color="white"
                 >{data?.conceptContentTwo}</MotionText>
-                <Flex justifyContent={"center"} w="100%" zIndex={1000}>
+                <Flex
+                    justifyContent={"center"}
+                    w="100%"
+                    zIndex={1000}
+                >
                     <Link href={locale && locale !== 'fr-FR' ? "/en/by-luxuria" : "by-luxuria"}>
-                        <Button aria-label="playForward" variant="unstyled" size={{base: 'md', md:"lg"}} fontWeight={'light'} role="group">
+                        <MotionButton
+                            initial={{ opacity: 0, x: -40 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{duration: 1, delay: 0.5}}
+                            viewport={{ once: true }}
+                            aria-label="playForward"
+                            variant="unstyled"
+                            size={{ base: 'md', md: "lg" }}
+                            fontWeight={'light'}
+                            role="group"
+                        >
                             <HStack spacing="3" position="relative">
                                 <Text color="#D7A989">EN SAVOIR PLUS</Text>
                                 <Box _groupHover={{opacity:0}} transition="opacity 0.5s">
@@ -94,7 +109,7 @@ export const Concept = ({data}) => {
                             <Flex w="full" display="flex" justifyContent={"flex-end"}>
                                 <Box w="full" h="1px" bgColor="#D7A989" transition="width 0.5s ease" _groupHover={{width:"0"}}></Box>
                             </Flex>
-                        </Button>
+                        </MotionButton>
                     </Link>
                 </Flex>
             </Stack>
