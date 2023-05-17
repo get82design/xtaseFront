@@ -76,14 +76,25 @@ export const ByLuxuriaHeading = ({ data }) => {
                     mb={{base:8, md:0}}
                     justifyContent={'center'}
                 >
-                    <Text
+                    {/* <Text
                         color="white"
                         fontFamily={"proxima-nova"}
                         fontSize={{ base: 'sm', md: 'md' }}
                         fontWeight={'light'}
                         letterSpacing={'widest'}
                         textTransform={"uppercase"}
-                    >Scroll to discover</Text>
+                    >Scroll to discover</Text> */}
+                    <Box className="scrollToDiscover" color="white"
+                        fontFamily={"proxima-nova"}
+                        fontSize={{ base: 'sm', md: 'md' }}
+                        fontWeight={'light'}
+                        letterSpacing={'widest'}
+                        textTransform={"uppercase"}>
+                        <div>Scroll</div> 
+                        <div> 
+                            <span> to discover</span>
+                        </div>
+                    </Box>
                 </MotionFlex>
             </MotionBox>
         </Flex>

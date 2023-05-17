@@ -260,7 +260,7 @@ a {
   z-index: 1;
   bottom: 0;
   cursor: pointer;
-  background-color: #D7A989 !important;
+  /* background-color: #D7A989 !important; */
   outline: none;
   border-radius: 0% !important;
   overflow: hidden; 
@@ -289,4 +289,50 @@ a {
 }
 .startButtonTwo:hover::before {
   box-shadow: inset 0 0 0 32em #CF9267;
+}
+
+.scrollToDiscover div {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+  color:white;
+}
+
+.scrollToDiscover div:first-of-type {    /* For increasing performance 
+                       ID/Class should've been used. 
+                       For a small demo 
+                       it's okaish for now */
+  animation: showup 7s infinite;
+}
+
+.scrollToDiscover div:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+.scrollToDiscover div:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-200px; }
+    20% { margin-left:-200px; }
+    35% { margin-left:5px; }
+    100% { margin-left:5px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:150px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:150px;}
 }
