@@ -7,6 +7,7 @@ import Seo from "../components/Seo/Seo";
 import { useGetByLuxuriaPage } from "../hook/hook";
 import { fetchAPI } from "../lib/api";
 import { VideoSection } from "../components/Section/VideoSection";
+import { getStrapiMedia } from "../lib/media";
 
 const ByLuxuria = ({ seo, locale }) => {
   const { error, isLoading, data } = useGetByLuxuriaPage(locale)
@@ -26,6 +27,8 @@ const ByLuxuria = ({ seo, locale }) => {
         <ByLuxuriaHeading data={data} />
 
         <ByLuxuriaSection data={data} />  
+
+        <Box w="100%" h="100vh" bgImage={getStrapiMedia(data.attributes.bgImage)}></Box>
 
         <MapAndContact locale={locale} />
 

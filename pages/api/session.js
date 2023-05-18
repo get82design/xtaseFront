@@ -40,7 +40,7 @@ export const getHomePage = async (locale) => {
 }
 
 export const getByLuxuriaPage = async (locale) => {
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/by-luxuria-page?populate=hero&populate[1]=imgHero&populate[2]=backgroundVideo&populate[3]=buttonResa&populate[4]=sectionOne.img&populate[5]=sectionTwo.img&populate[6]=sectionThree.img${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/by-luxuria-page?populate=hero&populate[1]=imgHero&populate[3]=buttonResa&populate[4]=sectionOne.img&populate[5]=sectionTwo.img&populate[6]=sectionThree.img&populate[7]=bgImage${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const byLuxuriaRes = await res.json()
     return byLuxuriaRes.data
     // return fetchAPI('/by-luxuria-page', {

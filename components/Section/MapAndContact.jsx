@@ -77,13 +77,13 @@ export const MapAndContact = ({locale}) => {
                             >{mapAndContact?.attributes.phone}</MotionText>
                         </Stack>
                         <Stack spacing={1}>
-                            <Text
+                            <MotionText
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{duration: 0.5}}
                                 viewport={{ once: true }}
                                 color="#D7A989"
-                            >{locale && locale !== "fr-FR" ? 'Social Messenger' : 'Messager social'}</Text>
+                            >{locale && locale !== "fr-FR" ? 'Social Messenger' : 'Messager social'}</MotionText>
                             <Link href={messagerie ? messagerie : "#"} target="_blank">
                                 <MotionText
                                     initial={{ opacity: 0, x:40 }}

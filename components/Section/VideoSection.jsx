@@ -11,10 +11,11 @@ export const VideoSection = ({ data }) => {
     const [showTitle, setShowTitle] = useState(true)
     return (
         <>
-            <Box w="100%" px={0} py={{base: 8, md:24}} position="relative">
-                <video style={{width:'100%'}} muted autoPlay loop playsInline preload="auto">
-                    <source src={getStrapiMedia(data.backgroundVideo.bgVideo)} type="video/mp4" />
+            <Box w="100%" px={0} my={{base: 8, md:24}} position="relative">
+                <video style={{width:'100%', height:"100vh"}} muted autoPlay loop playsInline preload="auto">
+                    <source src={getStrapiMedia(data.videoBg)} type="video/mp4" />
                 </video>
+                <Box position="absolute" w="100%" h="150px" bottom={0} left={0} bgGradient={'linear(to-t, #0C0023, transparent)'}></Box>
                 <MotionStack
                     variants={variants}
                     animate={showTitle ? '' : 'opacity'}
