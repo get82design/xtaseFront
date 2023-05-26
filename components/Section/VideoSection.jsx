@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Icon, Stack } from "@chakra-ui/react"
+import { Box, Flex, Heading, Icon, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, Stack, useDisclosure } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { getStrapiMedia } from "../../lib/media"
 import {MdPlayArrow} from "react-icons/md"
@@ -9,20 +9,24 @@ const MotionStack = motion(Stack)
 const variants = { opacity: { opacity: 0, transition: { duration: 0.5}}}
 export const VideoSection = ({ data }) => {
     const [showTitle, setShowTitle] = useState(true)
+    const {isOpen, onOpen, onClose} = useDisclosure()
     const refVideo = useRef(null)
     const play = (e) => {
+        onOpen()
         refVideo.current.play()
     }
     return (
         <>
             <Box w="100%" px={0} my={{base: 8, md:24}} position="relative">
-                <video ref={refVideo} style={{width:'100%', height:"100vh"}} muted loop playsInline preload="auto">
+                <video ref={refVideo} style={{ base: {width:'100%', height:"60vh", opacity:'0.6'}, md:{width:'100%', height:"100vh", opacity:'0.6'}}} muted loop playsInline autoPlay preload="auto">
                     <source src={getStrapiMedia(data.videoBg)} type="video/mp4" />
                 </video>
+
+                <Box position="absolute" top={0} left={0} width="100%" h={{base:'60vh', md:"110vh"}} bgColor="#0C0023" opacity={0.4}></Box>
                 <Box position="absolute" w="100%" h="150px" bottom={0} left={0} bgGradient={'linear(to-t, #0C0023, transparent)'}></Box>
                 <MotionStack
-                    variants={variants}
-                    animate={showTitle ? '' : 'opacity'}
+                    // variants={variants}
+                    // animate={showTitle ? '' : 'opacity'}
                     w='100%'
                     align="center"
                     position="absolute"
@@ -66,6 +70,16 @@ export const VideoSection = ({ data }) => {
                         </Box>
                     </Flex>
                 </MotionStack>
+                <Modal size="4xl" onClose={onClose} isOpen={isOpen}>
+                    <ModalOverlay />
+                    <ModalContent p={0}>
+                        <ModalBody p={0}>
+                            <video style={{ base: {width:'100%', height:"60vh", opacity:'0.6'}, md:{width:'100%', height:"100vh", opacity:'0.6'}}}  autoPlay playsInline controls loop>
+                                <source src={getStrapiMedia(data.videoBg)} type="video/mp4" />
+                            </video>
+                        </ModalBody>
+                    </ModalContent>
+                </Modal>
             </Box>
         </>
     )
