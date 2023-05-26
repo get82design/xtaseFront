@@ -130,11 +130,12 @@ export const EnImagesSection = ({ data }) => {
                     </MotionButton>
                 </Link>
             </Flex>
-            <Modal isOpen={isOpen} onClose={onClose} size="4xl">
+            <Modal isOpen={isOpen} onClose={onClose} size="4xl" >
                 <ModalOverlay />
-                    <ModalContent>
+                <ModalContent mt={{base:"30%", sm: "20%", md:"5%"}}>
+                    <ModalCloseButton color={'white'}  />
                         {imgModal &&
-                            <Box h={'80vh'} w={'100%'} backgroundImage={getStrapiMediaInArray(imgModal)} bgSize="cover" bgPosition={"center"}></Box>
+                            <Box  h={{base: '60vh', md:'80vh'}} w={'100%'} backgroundImage={getStrapiMediaInArray(imgModal)} bgSize="cover" bgPosition={"center"}></Box>
                         }
                     </ModalContent>
             </Modal>

@@ -65,7 +65,7 @@ export const ByLuxuriaHeading = ({ data }) => {
                     >{data?.attributes.hero.subTitle}</MotionHeading> 
                 </Flex>  
                 <MotionFlex
-                    initail={{ y: 60 }}
+                    initial={{ y: 60 }}
                     animate={{ y: 0 }}
                     transition={{delay: 0.5, duration: 1}}
                     position="absolute"

@@ -269,7 +269,7 @@ a {
   z-index: 1;
   bottom: 0;
   cursor: pointer;
-  /* background-color: #D7A989 !important; */
+  background-color: #D7A989 !important;
   outline: none;
   border-radius: 0% !important;
   overflow: hidden; 
@@ -320,7 +320,7 @@ a {
 }
 
 .scrollToDiscover div:last-of-type span {
-  margin-left:-355px;
+  margin-left:-200px;
   animation: slidein 7s infinite;
 }
 
@@ -341,7 +341,7 @@ a {
 @keyframes reveal {
     0% {opacity:0;width:0px;}
     20% {opacity:1;width:0px;}
-    30% {width:150px;}
+    30% {width:110px;}
     80% {opacity:1;}
-    100% {opacity:0;width:150px;}
+    100% {opacity:0;width:110px;}
 }
