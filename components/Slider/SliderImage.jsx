@@ -82,7 +82,6 @@ export const SliderImage = ({ datas }) => {
                         return (
                             <>
                                 <Image
-                                    onClick={onOpenModal(data.attributes.img)}
                                     key={idx}
                                     alt=""
                                     src={getStrapiMedia(data.attributes.img)}
@@ -121,23 +120,6 @@ export const SliderImage = ({ datas }) => {
                     })}
                 </Stack>
             }
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>Modal Title</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                        {/* <Lorem count={2} /> */}<p>ok</p>
-                    </ModalBody>
-
-                    <ModalFooter>
-                        <Button colorScheme='blue' mr={3} onClick={onClose}>
-                        Close
-                        </Button>
-                        <Button variant='ghost'>Secondary Action</Button>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
         </>
     )
 }
