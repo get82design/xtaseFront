@@ -2,17 +2,21 @@ import { Box, Flex, Heading, Icon, Stack } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { getStrapiMedia } from "../../lib/media"
 import {MdPlayArrow} from "react-icons/md"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 const MotionHeading = motion(Heading)
 const MotionStack = motion(Stack)
 const variants = { opacity: { opacity: 0, transition: { duration: 0.5}}}
 export const VideoSection = ({ data }) => {
     const [showTitle, setShowTitle] = useState(true)
+    const refVideo = useRef(null)
+    const play = (e) => {
+        refVideo.current.play()
+    }
     return (
         <>
             <Box w="100%" px={0} my={{base: 8, md:24}} position="relative">
-                <video style={{width:'100%', height:"100vh"}} muted autoPlay loop playsInline preload="auto">
+                <video ref={refVideo} style={{width:'100%', height:"100vh"}} muted loop playsInline preload="auto">
                     <source src={getStrapiMedia(data.videoBg)} type="video/mp4" />
                 </video>
                 <Box position="absolute" w="100%" h="150px" bottom={0} left={0} bgGradient={'linear(to-t, #0C0023, transparent)'}></Box>
@@ -56,10 +60,10 @@ export const VideoSection = ({ data }) => {
                         {/* <Box bgColor={"#D7A989"} rounded="full" px={4} py={1}>
                             <Icon w={8} h={8} color="white" as={MdPlayArrow} />
                         </Box> */}
-                        <div className="videoBgIcon">
-                            <Icon w={8} h={8} color="white" as={MdPlayArrow} />
+                        <Box className="videoBgIcon" cursor="pointer" onClick={(e) => play()}>
+                            <Icon w={{base: 8, md:16}} h={{base:8, md:16}} color="white" as={MdPlayArrow} />
                             <div className="oreoleVideoBgIcon"></div>
-                        </div>
+                        </Box>
                     </Flex>
                 </MotionStack>
             </Box>

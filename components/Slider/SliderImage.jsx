@@ -1,12 +1,19 @@
-import { Box, Center, Heading, IconButton, Image, Stack, Text } from "@chakra-ui/react"
+import {
+    Center,
+    Heading,
+    IconButton,
+    Image,
+    Stack,
+    Text
+} from "@chakra-ui/react"
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { getStrapiMedia } from "../../lib/media";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { useEffect, useState } from "react";
 
+
 export const SliderImage = ({ datas }) => {
-    const [isMobile, setIsMobile] = useState(null)
     useEffect(() => {
         if (window.innerWidth < 1024) {
             setIsMobile("mobile")

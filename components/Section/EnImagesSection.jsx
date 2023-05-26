@@ -1,6 +1,14 @@
-import { Box, Button, Flex, HStack, Heading, Image, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Flex, HStack, Heading, Image, Stack, Text,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalCloseButton,
+    ModalBody,
+    ModalFooter,
+    useDisclosure } from "@chakra-ui/react"
 import { Swiper, SwiperSlide } from "swiper/react";
-import { getStrapiMediaInArray } from "../../lib/media"
+import { getStrapiMedia, getStrapiMediaInArray } from "../../lib/media"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { FreeMode, Navigation } from "swiper";
@@ -16,6 +24,9 @@ export const EnImagesSection = ({ data }) => {
     const [nbImg, setNbImg] = useState(0)
     const router = useRouter()
     const locale = router.locale
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [isMobile, setIsMobile] = useState(null)
+    const [imgModal, setImgModal] = useState(null)
 
     useEffect(() => {
         if (window.innerWidth < 769) {
@@ -25,6 +36,12 @@ export const EnImagesSection = ({ data }) => {
             setNbImg(3)
         }
     }, [])
+
+    const onOpenModal = (data) => {
+        setImgModal(data)
+        onOpen()
+    }
+
     return (
         <Box w="100%" px={{base:4, md:8, lg:16}} py={24}>
             <Stack w='100%' align="center" spacing={0}>
@@ -72,7 +89,7 @@ export const EnImagesSection = ({ data }) => {
                 >
                     {data?.galleryImgs.data.map((img, idx) => {
                     return (
-                        <SwiperSlide key={idx}><Image src={getStrapiMediaInArray(img)} alt="" loading="lazy" /></SwiperSlide>
+                        <SwiperSlide key={idx}><Image onClick={() => onOpenModal(img)} src={getStrapiMediaInArray(img)} alt="" loading="lazy" /></SwiperSlide>
                     )
                     })}
                 </Swiper>
@@ -113,6 +130,14 @@ export const EnImagesSection = ({ data }) => {
                     </MotionButton>
                 </Link>
             </Flex>
+            <Modal isOpen={isOpen} onClose={onClose} size="4xl">
+                <ModalOverlay />
+                    <ModalContent>
+                        {imgModal &&
+                            <Box h={'80vh'} w={'100%'} backgroundImage={getStrapiMediaInArray(imgModal)} bgSize="cover" bgPosition={"center"}></Box>
+                        }
+                    </ModalContent>
+            </Modal>
         </Box>
     )
 }

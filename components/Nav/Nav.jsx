@@ -141,9 +141,9 @@ export const Nav = () => {
             </>
             }
             {/* DRAWER WITH MENU */}
-            <Drawer onClose={onClose} isOpen={isOpen} size={"xl"}>
+            <Drawer onClose={onClose} isOpen={isOpen} size={"full"}>
                 <DrawerOverlay />
-                <DrawerContent style={{lg:{ maxWidth: '80vw'}}}>
+                <DrawerContent>
                     <DrawerBody p={0}>
                         <Box position="relative" w="100%" h="100vh"
                             bgColor="#0C0023">
@@ -200,7 +200,7 @@ export const Nav = () => {
                             >
                                 <Flex /*justifyContent={{base: "center", xl:"start"}}*/ justifyContent={"center"} w="100%">
                                     <Img
-                                        ml={{base:-4, lg:-12, xl:-24}}
+                                        ml={{base:-4, lg:-12, xl:-12}}
                                         src="/images/logoColor.png"
                                         // style={{ width: "269px", height: "132px" }}
                                         width={{base:"135px", md:"200px"}}
@@ -208,7 +208,7 @@ export const Nav = () => {
                                         alt="Logo Xtase by Luxuria"
                                     />
                                 </Flex>
-                                <List spacing={2} pt={20} ml={{base:12, md:24, lg:36, xl:48}}>
+                                <List spacing={2} pt={20} ml={{base:12, md:24, lg:'38%', xl:'42%'}}>
                                     {data && data.map((navLink, idx=0) => (
                                         <Box
                                             key={idx}

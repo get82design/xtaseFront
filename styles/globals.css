@@ -173,6 +173,10 @@ a {
   transition: 0.9s;
 }
 
+.headerContainer .header.active {
+  background: linear-gradient(#0C0023 50%, transparent);
+}
+
 .headerContainer .header.active img {
   width: 134px !important;
   height: 66px !important;
@@ -189,14 +193,14 @@ a {
 }
 
 .oreoleVideoBgIcon {
-  width:70px;
-  height: 45px;
+  width:102px;
+  height: 77px;
   border-radius: 100%;
   border: 1px solid white;
   position:absolute;
   top:0;
   left:0;
-  transform: rotate(-30deg);
+  transform: rotate(-40deg);
 }
 
 @media (max-width: 768px) {
@@ -206,6 +210,11 @@ a {
   }
   .mySwiper .swiper-wrapper .swiper-slide img {
     width: 90vw;
+  }
+  .oreoleVideoBgIcon {
+    width:70px;
+    height: 45px;
+    transform: rotate(-30deg);
   }
 }
 
