@@ -4,7 +4,15 @@ import {
     IconButton,
     Image,
     Stack,
-    Text
+    Text,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalCloseButton,
+    ModalBody,
+    ModalFooter,
+    useDisclosure
 } from "@chakra-ui/react"
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -14,6 +22,7 @@ import { useEffect, useState } from "react";
 
 
 export const SliderImage = ({ datas }) => {
+    const [isMobile, setIsMobile] = useState(null)
     useEffect(() => {
         if (window.innerWidth < 1024) {
             setIsMobile("mobile")
@@ -73,6 +82,7 @@ export const SliderImage = ({ datas }) => {
                         return (
                             <>
                                 <Image
+                                    onClick={onOpenModal(data.attributes.img)}
                                     key={idx}
                                     alt=""
                                     src={getStrapiMedia(data.attributes.img)}
@@ -111,6 +121,23 @@ export const SliderImage = ({ datas }) => {
                     })}
                 </Stack>
             }
+            <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Modal Title</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        {/* <Lorem count={2} /> */}<p>ok</p>
+                    </ModalBody>
+
+                    <ModalFooter>
+                        <Button colorScheme='blue' mr={3} onClick={onClose}>
+                        Close
+                        </Button>
+                        <Button variant='ghost'>Secondary Action</Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </>
     )
 }
