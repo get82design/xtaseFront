@@ -54,8 +54,8 @@ export const Layout = ({ children, logo, copyright }) => {
                     transition={{ duration: 0.5 }}
                     ml={{ base: 0, lg: -12 }}
                     mr={{base:-4, lg:0}}
-                    width={{base:"128px", md: "200px"}}
-                    height={{base:"66px", md: "103px"}}
+                    width={{base:"128px", md: "160px"}}
+                    height={{base:"66px", md: "82px"}}
                     src="/images/logoColor.png"
                     alt="Logo Xtase by Luxuria"
                     cursor="pointer"
