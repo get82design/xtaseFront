@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Icon, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, Stack, useDisclosure } from "@chakra-ui/react"
+import { Box, Center, Flex, Heading, Icon, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, Stack, useDisclosure } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { getStrapiMedia } from "../../lib/media"
 import {MdPlayArrow} from "react-icons/md"
@@ -17,10 +17,12 @@ export const VideoSection = ({ data }) => {
     }
     return (
         <>
-            <Box w="100%" px={0} my={{base: 8, md:24}} position="relative">
-                <video ref={refVideo} style={{ base: {width:'100%', height:"60vh", opacity:'0.6'}, md:{width:'100%', height:"100vh", opacity:'0.6'}}} muted loop playsInline autoPlay preload="auto">
-                    <source src={getStrapiMedia(data.videoBg)} type="video/mp4" />
-                </video>
+            <Box w="100%" px={0} my={{ base: 8, md: 24 }} position="relative">
+                <Center>
+                    <video ref={refVideo} style={{ base: {width:'100vw', height:"60vh", opacity:'0.6'}, md:{width:'100vw', height:"100vh", opacity:'0.5'}}} muted loop playsInline autoPlay preload="auto">
+                        <source src={getStrapiMedia(data.videoBg)} type="video/mp4" />
+                    </video>
+                </Center>
 
                 <Box position="absolute" top={0} left={0} width="100%" h={{base:'60vh', md:"110vh"}} bgColor="#0C0023" opacity={0.4}></Box>
                 <Box position="absolute" w="100%" h="150px" bottom={0} left={0} bgGradient={'linear(to-t, #0C0023, transparent)'}></Box>
