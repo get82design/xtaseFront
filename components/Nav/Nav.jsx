@@ -39,6 +39,7 @@ export const Nav = () => {
     const { data: socials } = useGetSocials()
     const dataSocials = socials || []
     const [reserve, setReserve] = useState("Réserver une nuit")
+    console.log('messagerie', messagerie)
 
     useEffect(() => {
         if (locale && locale !== 'fr-FR') {
@@ -239,12 +240,12 @@ export const Nav = () => {
                                                         transform="rotate(45deg)"
                                                         mr={{ base: "5", md: "9" }}
                                                     />
-                                                    <Text
+                                                    {/* <Text
                                                         mt="-3"
                                                         mr="4"
                                                         fontWeight={"medium"}
                                                         fontSize="sm"
-                                                    >{navLink.attributes.num}</Text>
+                                                    >{navLink.attributes.num}</Text> */}
                                                     <Text
                                                         fontSize={{ base: "2xl", md: "28px" }}
                                                         lineHeight="1"

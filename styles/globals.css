@@ -341,7 +341,7 @@ a {
 @keyframes reveal {
     0% {opacity:0;width:0px;}
     20% {opacity:1;width:0px;}
-    30% {width:110px;}
+    30% {width:120px;}
     80% {opacity:1;}
-    100% {opacity:0;width:110px;}
+    100% {opacity:0;width:120px;}
 }
