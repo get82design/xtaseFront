@@ -97,7 +97,7 @@ export const SliderImage = ({ datas }) => {
                                             color="white"
                                             fontWeight={"semibold"}
                                         >{data.attributes.title}</Heading>
-                                        <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white">{data.attributes.desc}</Text>
+                                        {/* <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white">{data.attributes.desc}</Text> */}
                                     </Stack>
                                 </Center>
                             </>

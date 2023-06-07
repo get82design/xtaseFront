@@ -38,7 +38,7 @@ const EnImages = ({ seo, locale }) => {
         isLoading: isLoadingCuisine,
         data: dataCuisine
     } = useGetGalerieCuisine(loadCuisine, locale)
-
+    console.log('en images', data)
     if (isLoading) {
         return (
             <Flex alignItems={"center"} h="100vh" justifyContent={"center"} w="100%">
@@ -150,9 +150,12 @@ const EnImages = ({ seo, locale }) => {
                 </Flex>
             }
             {(loadChambre && dataChambre) &&
-                <Box w="100%" mb={24}>
-                    <SliderImage datas={dataChambre} />
-                </Box>
+                <>
+                    <Box w="100%" mb={24}>
+                        <SliderImage datas={dataChambre} />
+                    </Box>
+                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data.attributes.bedroomDesc}</Text>
+                </>
             }
             {( loadSalon && isLoadingSalon) &&
                 <Flex h="100vh" justifyContent={"center"} w="100%">
@@ -160,9 +163,12 @@ const EnImages = ({ seo, locale }) => {
                 </Flex>
             }
             {(loadSalon && dataSalon) &&
-                <Box w="100%" mb={24}>
-                    <SliderImage datas={dataSalon} />
-                </Box>
+                <>
+                    <Box w="100%" mb={24}>
+                        <SliderImage datas={dataSalon} />
+                    </Box>
+                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data.attributes.chambreDesc}</Text>
+                </>
             }
             {( loadSalleDeBain && isLoadingSalleDeBain) &&
                 <Flex h="100vh" justifyContent={"center"} w="100%">
@@ -170,9 +176,12 @@ const EnImages = ({ seo, locale }) => {
                 </Flex>
             }
             {(loadSalleDeBain && dataSalleDeBain) &&
-                <Box w="100%" mb={24}>
-                    <SliderImage datas={dataSalleDeBain} />
-                </Box>
+                <>
+                    <Box w="100%" mb={24}>
+                        <SliderImage datas={dataSalleDeBain} />
+                    </Box>
+                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data.attributes.bathroomDesc}</Text>
+                </>
             }
             {( loadCuisine && isLoadingCuisine) &&
                 <Flex h="100vh" justifyContent={"center"} w="100%">
@@ -180,9 +189,12 @@ const EnImages = ({ seo, locale }) => {
                 </Flex>
             }
             {(loadCuisine && dataCuisine) &&
-                <Box w="100%" mb={24}>
-                    <SliderImage datas={dataCuisine} />
-                </Box>
+                <>
+                    <Box w="100%" mb={24}>
+                        <SliderImage datas={dataCuisine} />
+                    </Box>
+                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data.attributes.kitchenDesc}</Text>
+                </>
             }
             <ByLuxuriaCard locale={locale} />
         </>
