@@ -14,7 +14,7 @@ export const SliderHeader = ({ slides }) => {
             infiniteLoop>
             {slides && slides.map((slide, idx) => {
                 return (
-                    <Image key={idx} alt="" src={slide.image} height="90vh" width="auto" />
+                    <Image key={idx} alt="" src={slide.image} height="90vh" width="100vw" />
                 )
             })}
         </Carousel>

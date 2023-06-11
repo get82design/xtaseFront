@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* eslint-disable-next-line */}
-          <link rel="stylesheet" href="https://use.typekit.net/msu3wza.css"></link>
+          <link rel="preload" as="font" href="https://use.typekit.net/msu3wza.css"></link>
           {/* <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Staatliches"
