@@ -19,11 +19,11 @@ import {
 import { useQuery } from "react-query"
 
 export const useGetGlobal = () => {
-    return useQuery(['getGlobal'], () => getGlobal())
+    return useQuery(['getGlobal'], () => getGlobal(), {enabled})
 }
 
 export const useGetNavLinks = (locale) => {
-    return useQuery([`getNavLinks${locale}`], () => getNavLinks(locale))
+    return useQuery([`getNavLinks${locale}`], () => getNavLinks(locale), {enabled: !!locale})
 }
 
 export const useGetSocials = () => {
@@ -31,7 +31,7 @@ export const useGetSocials = () => {
 }
 
 export const useGetHomepage = (locale) => {
-    return useQuery([`getHomepage${locale}`], () => getHomePage(locale))
+    return useQuery([`getHomepage${locale}`], () => getHomePage(locale), {enabled: !!locale})
 }
 
 export const useGetByLuxuriaPage = (locale) => {
@@ -75,9 +75,9 @@ export const useGetListSituationItems = (enabled, locale) => {
 }
 
 export const useGetMapAndContact = (locale) => {
-    return useQuery([`getMapAndContact${locale}`], () => getMapAndContact(locale))
+    return useQuery([`getMapAndContact${locale}`], () => getMapAndContact(locale), {enabled: !!locale})
 }
 
 export const useGetCardByLuxuria = (locale) => {
-    return useQuery([`getCardByLuxuria${locale}`], () => getCardByLuxuria(locale))
+    return useQuery([`getCardByLuxuria${locale}`], () => getCardByLuxuria(locale), {enabled: !!locale})
 }

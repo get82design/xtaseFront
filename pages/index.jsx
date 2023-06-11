@@ -3,20 +3,14 @@ import { MapAndContact } from '../components/Section/MapAndContact'
 import Seo from './../components/Seo/Seo'
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useGetHomepage } from './../hook/hook'
-import { fetchAPI } from './../lib/api'
-import { Box, Flex, Heading, Spinner } from '@chakra-ui/react'
+import { Flex, Spinner } from '@chakra-ui/react'
 
-import { motion } from 'framer-motion'
 import { HomeHeading } from '../components/Heading/HomeHeading'
 import { Concept } from '../components/Section/Concept'
 import { ListHomeList } from '../components/List/ListHomeList'
 import { EnImagesSection } from '../components/Section/EnImagesSection'
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { VideoSection } from '../components/Section/VideoSection'
-
-const MotionHeading = motion(Heading)
-const MotionBox = motion(Box)
 
 const Home = ({ seo, locale }) => {
   const [localeInView, setLocaleInView] = useState(null)
