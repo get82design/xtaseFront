@@ -10,16 +10,16 @@ const variants = { opacity: { opacity: 0, transition: { duration: 0.5}}}
 export const VideoSection = ({ data }) => {
     const [showTitle, setShowTitle] = useState(true)
     const {isOpen, onOpen, onClose} = useDisclosure()
-    const refVideo = useRef(null)
-    const play = (e) => {
-        onOpen()
-        refVideo.current.play()
-    }
+    // const refVideo = useRef(null)
+    // const play = (e) => {
+    //     onOpen()
+    //     refVideo.current.play()
+    // }
     return (
         <>
             <Box w="100%" px={0} my={{ base: 8, md: 24 }} position="relative">
                 <Center>
-                    <video ref={refVideo} style={{ base: {width:'100vw', height:"60vh", opacity:'0.6'}, md:{width:'100vw', height:"100vh", opacity:'0.5'}}} muted loop playsInline autoPlay preload="auto">
+                    <video style={{ base: {width:'100vw', height:"60vh", opacity:'0.6'}, md:{width:'100vw', height:"100vh", opacity:'0.5'}}} muted loop playsInline autoPlay preload="auto">
                         <source src={getStrapiMedia(data?.videoBg)} type="video/mp4" />
                     </video>
                 </Center>
