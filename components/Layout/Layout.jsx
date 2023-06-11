@@ -55,7 +55,7 @@ export const Layout = ({ children, logo, copyright }) => {
                     ml={{ base: 0, lg: -12 }}
                     mr={{base:-4, lg:0}}
                     width={"128px"}
-                    height={"65px"}
+                    height={"63px"}
                     src="/images/logoColor.png"
                     alt="Logo Xtase by Luxuria"
                     cursor="pointer"
@@ -69,7 +69,7 @@ export const Layout = ({ children, logo, copyright }) => {
                     ml={{ base: 0, lg: -12 }}
                     mr={{base:-4, lg:0}}
                     width={"160px"}
-                    height={"81px"}
+                    height={"78px"}
                     src="/images/logoColor.png"
                     alt="Logo Xtase by Luxuria"
                     cursor="pointer"
