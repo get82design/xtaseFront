@@ -48,13 +48,28 @@ export const Layout = ({ children, logo, copyright }) => {
                 className={`header ${isActive}`}
             >
                 <MotionImg
+                    display={{md:"none"}}
                     initial={{ scale: 0.1, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5 }}
                     ml={{ base: 0, lg: -12 }}
                     mr={{base:-4, lg:0}}
-                    width={{base:"128px", md: "160px"}}
-                    height={{base:"66px", md: "82px"}}
+                    width={"128px"}
+                    height={"66px"}
+                    src="/images/logoColor.png"
+                    alt="Logo Xtase by Luxuria"
+                    cursor="pointer"
+                    onClick={() => window.location.href='/'}
+                />
+                <MotionImg
+                    display={{base: "none", md:"initial"}}
+                    initial={{ scale: 0.1, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    ml={{ base: 0, lg: -12 }}
+                    mr={{base:-4, lg:0}}
+                    width={"160px"}
+                    height={"82px"}
                     src="/images/logoColor.png"
                     alt="Logo Xtase by Luxuria"
                     cursor="pointer"
