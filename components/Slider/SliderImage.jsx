@@ -77,7 +77,7 @@ export const SliderImage = ({ datas }) => {
                                     key={idx}
                                     alt=""
                                     src={getStrapiMedia(data.attributes.img)}
-                                    height="100vh"
+                                    height="90vh"
                                     width="auto"
                                 />
                                 <Center>
