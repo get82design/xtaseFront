@@ -1,13 +1,12 @@
-import { Box, Flex, Img } from "@chakra-ui/react"
+import { Box, Flex, Image } from "@chakra-ui/react"
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Footer } from "../Footer/Footer";
 import { Nav } from "../Nav/Nav"
 import { useRouter } from "next/router";
 import Link from "next/link";
-// import { useTranslation } from "next-i18next"
 
-const MotionImg = motion(Img)
+const MotionImg = motion(Image)
 export const Layout = ({ children, logo, copyright }) => {
     const [isActive, setIsActive] = useState('')
     const router = useRouter()

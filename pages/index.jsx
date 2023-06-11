@@ -36,7 +36,6 @@ const Home = ({ seo, locale }) => {
     )
   }
 
-  console.log('home', seo, data, locale)
   return (
     <>
       {/* SEO */}
@@ -80,24 +79,13 @@ const Home = ({ seo, locale }) => {
 
 export const getServerSideProps = async ({ locale }) => {
   // Run API calls in parallel
-  const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/homepage?populate=seo&[populate][0]=seo.shareImage${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+  const res = await fetch(`https://clownfish-app-cpogf.ondigitalocean.app/api/homepage?populate=seo&[populate][0]=seo.shareImage${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
   const homepageRes = await res.json()
-  // const [ homepageRes] = await Promise.all([
-  //   fetchAPI(`/homepage`, {
-  //     // populate: "*",
-  //     populate: {
-  //       seo: { populate: "*" },
-  //     },
-  //   }, locale),
-  // ]);
 
-  console.log('homepage', homepageRes)
   return {
     props: {
-      // home: homepageRes.data.attributes,
       seo: homepageRes.data.attributes.seo,
       locale: locale
-      // ...await serverSideTranslations(locale, ['common']),
     },
     // revalidate: 1,
   };

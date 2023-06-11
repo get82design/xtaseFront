@@ -2,17 +2,8 @@ import {
     Center,
     Heading,
     IconButton,
-    Image,
     Stack,
-    Text,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalCloseButton,
-    ModalBody,
-    ModalFooter,
-    useDisclosure
+    Image
 } from "@chakra-ui/react"
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -113,8 +104,8 @@ export const SliderImage = ({ datas }) => {
                                 key={idx}
                                 alt=""
                                 src={getStrapiMedia(data.attributes.img)}
-                                w='90vw'
-                                h='auto'
+                                width='90vw'
+                                height='auto'
                             />
                         )
                     })}

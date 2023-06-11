@@ -1,7 +1,6 @@
 import { useGetNavLinks, useGetSocials } from "./../../hook/hook"
 import {
     Box,
-    Img,
     HStack,
     Text,
     Icon,
@@ -13,9 +12,7 @@ import {
     List,
     ListItem,
     ListIcon,
-    Flex,
-    Link,
-    Button
+    Flex
 } from "@chakra-ui/react"
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { motion } from "framer-motion"
@@ -25,6 +22,7 @@ import { useRouter } from "next/router"
 import { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../../pages/_app"
 import { useDialogContext } from "../Dialog/DialogContext"
+import Image from "next/image"
 
 const MotionBox = motion(Box)
 const MotionHStack = motion(HStack)
@@ -199,8 +197,18 @@ export const Nav = () => {
                                 pt={8}
                                 w="100%"
                             >
-                                <Flex /*justifyContent={{base: "center", xl:"start"}}*/ justifyContent={"center"} w="100%">
-                                    <Img
+                                <Flex justifyContent={"center"} w="100%">
+                                    <Image
+                                        display={{md: "none"}}
+                                        ml={{base:-4, lg:-12, xl:-12}}
+                                        src="/images/logoColor.png"
+                                        // style={{ width: "269px", height: "132px" }}
+                                        width={"135px"}
+                                        height={"66px"}
+                                        alt="Logo Xtase by Luxuria"
+                                    />
+                                    <Image
+                                        display={{ base: "none", md: "initial"}}
                                         ml={{base:-4, lg:-12, xl:-12}}
                                         src="/images/logoColor.png"
                                         // style={{ width: "269px", height: "132px" }}

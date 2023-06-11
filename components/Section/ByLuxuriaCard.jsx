@@ -1,5 +1,5 @@
 import { useGetCardByLuxuria } from "../../hook/hook"
-import { Box, Flex, Heading, Img, Text } from "@chakra-ui/react"
+import { Box, Flex, Heading, Text, Image } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 
 const MotionText = motion(Text)
@@ -16,7 +16,7 @@ export const ByLuxuriaCard = ({locale}) => {
             px={8}
             gap={8}
         >
-            <Img w={{ base: "200px", md:"281px"}} h={{base: "38px", md:"53px"}} src="/images/logolux.png" alt="" />
+            <Image width={{ base: "200px", md:"281px"}} height={{base: "38px", md:"53px"}} src="/images/logolux.png" alt="" />
             {/* <MotionHeading
                 initial={{ filter:"blur(10px)" }}
                 whileInView={{ filter:"blur(0px)" }}

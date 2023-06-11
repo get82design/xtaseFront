@@ -38,7 +38,6 @@ const EnImages = ({ seo, locale }) => {
         isLoading: isLoadingCuisine,
         data: dataCuisine
     } = useGetGalerieCuisine(loadCuisine, locale)
-    console.log('en images', data)
     if (isLoading) {
         return (
             <Flex alignItems={"center"} h="100vh" justifyContent={"center"} w="100%">
@@ -203,15 +202,8 @@ const EnImages = ({ seo, locale }) => {
 
 export async function getServerSideProps({locale}) {
   // Run API calls in parallel
-    const res = await fetch(`https://seal-app-ka6lw.ondigitalocean.app/api/en-images-page?populate=seo&[populate][0]=seo.shareImage${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
+    const res = await fetch(`https://clownfish-app-cpogf.ondigitalocean.app/api/en-images-page?populate=seo&[populate][0]=seo.shareImage${locale && locale !== 'fr-FR' ? `&locale=${locale}` : ""}`)
     const enImagesRes = await res.json()
-//   const [enImagesRes] = await Promise.all([
-//     fetchAPI("/en-images-page", {
-//       populate: {
-//         seo: { populate: "*" },
-//       },
-//     }, locale),
-//   ]);
 
   return {
     props: {

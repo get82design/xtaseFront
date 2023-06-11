@@ -1,7 +1,5 @@
-import { fetchAPI, fetchAPIWithoutLocale } from './../lib/api';
 import { getStrapiMedia } from './../lib/media';
 import '../styles/globals.css'
-import App from "next/app";
 import Head from "next/head";
 import { createContext } from "react";
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -15,7 +13,6 @@ import { appWithTranslation } from 'next-i18next';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { useRouter } from 'next/router';
 
 const theme = extendTheme({
   colors: {
@@ -35,7 +32,6 @@ export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }) => {
   const { global } = pageProps;
-  console.log('global', global)
   return (
     <>
       <Head>
@@ -69,7 +65,7 @@ MyApp.getInitialProps = async (ctx) => {
   // const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
   // const res = await fetch('https://seal-app-ka6lw.ondigitalocean.app/api/global?populate=*')
-  const res = await fetch('https://seal-app-ka6lw.ondigitalocean.app/api/global?populate=favicon&populate[0]=defaultSeo&[populate][3]=defaultSeo.shareImage')
+  const res = await fetch('https://clownfish-app-cpogf.ondigitalocean.app/api/global?populate=favicon&populate[0]=defaultSeo&[populate][3]=defaultSeo.shareImage')
   const globalRes = await res.json()
   // Pass the data to our page via props
   return { pageProps: { global: globalRes.data } };
