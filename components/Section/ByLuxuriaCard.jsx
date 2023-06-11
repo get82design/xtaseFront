@@ -16,7 +16,8 @@ export const ByLuxuriaCard = ({locale}) => {
             px={8}
             gap={8}
         >
-            <Image width={{ base: "200px", md:"281px"}} height={{base: "38px", md:"53px"}} src="/images/logolux.png" alt="" />
+            <Image display={{md:"none"}} width={"200px"} height={"38px"} src="/images/logolux.png" alt="" />
+            <Image display={{base:"none", md:"initial"}} width={"281px"} height={"53px"} src="/images/logolux.png" alt="" />
             {/* <MotionHeading
                 initial={{ filter:"blur(10px)" }}
                 whileInView={{ filter:"blur(0px)" }}

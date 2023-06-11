@@ -212,8 +212,8 @@ export const Nav = () => {
                                         ml={{base:-4, lg:-12, xl:-12}}
                                         src="/images/logoColor.png"
                                         // style={{ width: "269px", height: "132px" }}
-                                        width={{base:"135px", md:"200px"}}
-                                        height={{base:"66px", md:"103px"}}
+                                        width={"200px"}
+                                        height={"103px"}
                                         alt="Logo Xtase by Luxuria"
                                     />
                                 </Flex>

@@ -27,7 +27,7 @@ export const HomeHeading = ({data}) => {
       </Box>
       <Box
         w="100%"
-        h="80vh"
+        h="90vh"
         display={{ md: 'none' }}
         bgSize="cover"
         bgPosition={"center"}
@@ -39,7 +39,7 @@ export const HomeHeading = ({data}) => {
         top={0}
         left={0}
         w='100%'
-        h="80vh"
+        h="90vh"
         bgGradient={{base:"radial(rgba(12,0,35,0.6), #0C0023 80%)", md:"radial(rgba(12,0,35,0.4), #0C0023 80%)"}}></Box>
       {/* Title */}
       {data &&
