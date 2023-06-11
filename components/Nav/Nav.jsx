@@ -12,7 +12,8 @@ import {
     List,
     ListItem,
     ListIcon,
-    Flex
+    Flex,
+    Image
 } from "@chakra-ui/react"
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { motion } from "framer-motion"
@@ -22,7 +23,6 @@ import { useRouter } from "next/router"
 import { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../../pages/_app"
 import { useDialogContext } from "../Dialog/DialogContext"
-import Image from "next/image"
 
 const MotionBox = motion(Box)
 const MotionHStack = motion(HStack)
@@ -199,21 +199,11 @@ export const Nav = () => {
                             >
                                 <Flex justifyContent={"center"} w="100%">
                                     <Image
-                                        display={{md: "none"}}
                                         ml={{base:-4, lg:-12, xl:-12}}
                                         src="/images/logoColor.webp"
                                         // style={{ width: "269px", height: "132px" }}
-                                        width={135}
-                                        height={66}
-                                        alt="Logo Xtase by Luxuria"
-                                    />
-                                    <Image
-                                        display={{ base: "none", md: "initial"}}
-                                        ml={{base:-4, lg:-12, xl:-12}}
-                                        src="/images/logoColor.webp"
-                                        // style={{ width: "269px", height: "132px" }}
-                                        width={200}
-                                        height={103}
+                                        width={{base: "135px", md: "200px"}}
+                                        height={{base: "66px", md: "103px"}}
                                         alt="Logo Xtase by Luxuria"
                                     />
                                 </Flex>
