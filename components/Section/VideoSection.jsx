@@ -24,7 +24,7 @@ export const VideoSection = ({ data }) => {
                     </video>
                 </Center>
 
-                <Box position="absolute" top={0} left={0} width="100%" h={{base:'60vh', md:"110vh"}} bgColor="#0C0023" opacity={0.4}></Box>
+                <Box position="absolute" top={0} left={0} width="100%" h={{base:'60vh', md:"130vh"}} bgColor="#0C0023" opacity={0.4}></Box>
                 <Box position="absolute" w="100%" h="150px" bottom={0} left={0} bgGradient={'linear(to-t, #0C0023, transparent)'}></Box>
                 <MotionStack
                     // variants={variants}

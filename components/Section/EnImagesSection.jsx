@@ -89,7 +89,7 @@ export const EnImagesSection = ({ data }) => {
                 >
                     {data?.galleryImgs.data.map((img, idx) => {
                     return (
-                        <SwiperSlide key={idx}><Image w="25vw" h="auto" onClick={() => onOpenModal(img)} src={getStrapiMediaInArray(img)} alt="" loading="lazy" /></SwiperSlide>
+                        <SwiperSlide key={idx}><Image onClick={() => onOpenModal(img)} src={getStrapiMediaInArray(img)} alt="" loading="lazy" /></SwiperSlide>
                     )
                     })}
                 </Swiper>
