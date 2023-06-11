@@ -1,4 +1,4 @@
-import { Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -14,9 +14,12 @@ export const SliderHeader = ({ slides }) => {
             infiniteLoop>
             {slides && slides.map((slide, idx) => {
                 return (
-                    <Image key={idx} alt="" src={slide.image} height="70vh" width="100vw" />
+                    <Box w="100vw" h="80vh" bgImage={slide.image} bgSize={"cover"} bgPosition="center" bgRepeat="no-repeat" />
                 )
             })}
         </Carousel>
     )
 }
+
+
+                    {/* <Image key={idx} alt="" src={slide.image} height="70vh" width="100vw" /> */}

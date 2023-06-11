@@ -20,7 +20,7 @@ export const VideoSection = ({ data }) => {
             <Box w="100%" px={0} my={{ base: 8, md: 24 }} position="relative">
                 <Center>
                     <video ref={refVideo} style={{ base: {width:'100vw', height:"60vh", opacity:'0.6'}, md:{width:'100vw', height:"100vh", opacity:'0.5'}}} muted loop playsInline autoPlay preload="auto">
-                        <source src={getStrapiMedia(data.videoBg)} type="video/mp4" />
+                        <source src={getStrapiMedia(data?.videoBg)} type="video/mp4" />
                     </video>
                 </Center>
 
@@ -77,7 +77,7 @@ export const VideoSection = ({ data }) => {
                     <ModalContent p={0}>
                         <ModalBody p={0}>
                             <video style={{ base: {width:'100%', height:"60vh", opacity:'0.6'}, md:{width:'100%', height:"100vh", opacity:'0.6'}}}  autoPlay playsInline controls loop>
-                                <source src={getStrapiMedia(data.videoBg)} type="video/mp4" />
+                                <source src={getStrapiMedia(data?.videoBg)} type="video/mp4" />
                             </video>
                         </ModalBody>
                     </ModalContent>

@@ -20,14 +20,14 @@ export const HomeHeading = ({data}) => {
     }
   }, [data])
   return (
-    <Box w='100%' h='70vh' position='relative' mb={16}>
+    <Box w='100%' h='80vh' position='relative' mb={16}>
       {/* slider */}
       <Box w="100%" display={{base:'none', md:'initial'}}>
         <SliderHeader slides={slideData} />
       </Box>
       <Box
         w="100%"
-        h="70vh"
+        h="80vh"
         display={{ md: 'none' }}
         bgSize="cover"
         bgPosition={"center"}
@@ -39,7 +39,7 @@ export const HomeHeading = ({data}) => {
         top={0}
         left={0}
         w='100%'
-        h="70vh"
+        h="80vh"
         bgGradient={{base:"radial(rgba(12,0,35,0.6), #0C0023 80%)", md:"radial(rgba(12,0,35,0.4), #0C0023 80%)"}}></Box>
       {/* Title */}
       {data &&
