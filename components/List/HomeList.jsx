@@ -1,6 +1,5 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react"
+import { Box, Flex, Heading, Text, Image } from "@chakra-ui/react"
 import { motion } from "framer-motion"
-import Image from "next/image"
 import { getStrapiMedia } from "../../lib/media"
 
 const MotionFlex = motion(Flex)

@@ -201,7 +201,7 @@ export const Nav = () => {
                                     <Image
                                         display={{md: "none"}}
                                         ml={{base:-4, lg:-12, xl:-12}}
-                                        src="/images/logoColor.png"
+                                        src="/images/logoColor.webp"
                                         // style={{ width: "269px", height: "132px" }}
                                         width={135}
                                         height={66}
@@ -210,7 +210,7 @@ export const Nav = () => {
                                     <Image
                                         display={{ base: "none", md: "initial"}}
                                         ml={{base:-4, lg:-12, xl:-12}}
-                                        src="/images/logoColor.png"
+                                        src="/images/logoColor.webp"
                                         // style={{ width: "269px", height: "132px" }}
                                         width={200}
                                         height={103}

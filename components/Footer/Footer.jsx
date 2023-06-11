@@ -49,7 +49,7 @@ export const Footer = ({ locale }) => {
                     return (
                         <Box w={{base:"50%",lg:"25%"}} textAlign="center" /*_first={{textAlign:"left"}} _last={{textAlign:"right"}}*/ px={{base:4, md:8}} key={link.id}>
                             <Link 
-                                
+                                my={1}
                                 style={{ textTransform: "uppercase", fontWeight: "400" }}
                                 color="white"
                                 href={link.attributes.href || "#"}
