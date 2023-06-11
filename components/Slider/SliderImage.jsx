@@ -73,6 +73,7 @@ export const SliderImage = ({ datas }) => {
                         return (
                             <>
                                 <Image
+                                    fetchPriority="high"
                                     loading="lazy"
                                     key={idx}
                                     alt=""
