@@ -55,7 +55,7 @@ export const Layout = ({ children, logo, copyright }) => {
                     mr={{base:-4, lg:0}}
                     width={{base: "128px", md:"160px"}}
                     height={{base: "63px", md: "78px"}}
-                    src="/images/logoColor.webp"
+                    src="/images/logoColor.png"
                     alt="Logo Xtase by Luxuria"
                     cursor="pointer"
                     onClick={() => window.location.href='/'}

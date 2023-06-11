@@ -200,7 +200,7 @@ export const Nav = () => {
                                 <Flex justifyContent={"center"} w="100%">
                                     <Image
                                         ml={{base:-4, lg:-12, xl:-12}}
-                                        src="/images/logoColor.webp"
+                                        src="/images/logoColor.png"
                                         // style={{ width: "269px", height: "132px" }}
                                         width={{base: "135px", md: "200px"}}
                                         height={{base: "66px", md: "103px"}}
