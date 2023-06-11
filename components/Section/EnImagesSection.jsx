@@ -136,7 +136,7 @@ export const EnImagesSection = ({ data }) => {
                 <ModalContent mt={{base:"30%", sm: "20%", md:"5%"}}>
                     <ModalCloseButton color={'white'}  />
                         {imgModal &&
-                            <Box  h={{base: '60vh', md:'80vh'}} w={'100%'} backgroundImage={getStrapiMediaInArray(imgModal)} bgSize="cover" bgPosition={"center"}></Box>
+                            <Box h={{base: '60vh', md:'80vh'}} w={'100%'} backgroundImage={getStrapiMediaInArray(imgModal)} bgSize="cover" bgPosition={"center"}></Box>
                         }
                     </ModalContent>
             </Modal>
