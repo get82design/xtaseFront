@@ -74,7 +74,6 @@ export const SliderImage = ({ datas }) => {
                             <>
                                 <Image
                                     fetchPriority="high"
-                                    loading="lazy"
                                     key={idx}
                                     alt=""
                                     src={getStrapiMedia(data.attributes.img)}
