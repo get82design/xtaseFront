@@ -6,7 +6,8 @@ import { Box, Button, Flex, HStack, Heading, Image, Stack, Text,
     ModalCloseButton,
     ModalBody,
     ModalFooter,
-    useDisclosure } from "@chakra-ui/react"
+    useDisclosure
+} from "@chakra-ui/react"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getStrapiMedia, getStrapiMediaInArray } from "../../lib/media"
 import { motion } from "framer-motion"

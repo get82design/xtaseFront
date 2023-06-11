@@ -1,5 +1,6 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
+import { Box, Flex, Heading, Text } from "@chakra-ui/react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { getStrapiMedia } from "../../lib/media"
 
 const MotionFlex = motion(Flex)
@@ -42,8 +43,16 @@ export const HomeList = ({img, title, list}) => {
                         fontFamily={"proxima-nova"}
                     >
                         <Image
-                            width={{ base: "25px", md: "50px" }}
-                            height={{ base: "25px", md: "50px" }}
+                            display={{md:"none"}}
+                            width={"25px"}
+                            height={"25px"}
+                            alt=""
+                            src={getStrapiMedia(jeu?.attributes.icon)}
+                        />
+                        <Image
+                            display={{base:"none", md:"initial"}}
+                            width={"50px"}
+                            height={"50px"}
                             alt=""
                             src={getStrapiMedia(jeu?.attributes.icon)}
                         />

@@ -31,7 +31,7 @@ export const HomeHeading = ({data}) => {
         display={{ md: 'none' }}
         bgSize="cover"
         bgPosition={"center"}
-        bgImage={getStrapiMedia(data.heroMobileImg)}
+        bgImage={getStrapiMedia(data?.heroMobileImg)}
       ></Box>
       {/* overlay sur slider */}
       <Box
