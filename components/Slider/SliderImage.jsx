@@ -73,6 +73,7 @@ export const SliderImage = ({ datas }) => {
                         return (
                             <>
                                 <Image
+                                    loading="lazy"
                                     key={idx}
                                     alt=""
                                     src={getStrapiMedia(data.attributes.img)}
