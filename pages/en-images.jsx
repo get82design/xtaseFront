@@ -153,7 +153,7 @@ const EnImages = ({ seo, locale }) => {
                     <Box w="100%" mb={24}>
                         <SliderImage datas={dataChambre} />
                     </Box>
-                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data.attributes.bedroomDesc}</Text>
+                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data?.attributes.bedroomDesc}</Text>
                 </>
             }
             {( loadSalon && isLoadingSalon) &&
@@ -166,7 +166,7 @@ const EnImages = ({ seo, locale }) => {
                     <Box w="100%" mb={24}>
                         <SliderImage datas={dataSalon} />
                     </Box>
-                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data.attributes.chambreDesc}</Text>
+                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data?.attributes.chambreDesc}</Text>
                 </>
             }
             {( loadSalleDeBain && isLoadingSalleDeBain) &&
@@ -179,7 +179,7 @@ const EnImages = ({ seo, locale }) => {
                     <Box w="100%" mb={24}>
                         <SliderImage datas={dataSalleDeBain} />
                     </Box>
-                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data.attributes.bathroomDesc}</Text>
+                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data?.attributes.bathroomDesc}</Text>
                 </>
             }
             {( loadCuisine && isLoadingCuisine) &&
@@ -192,7 +192,7 @@ const EnImages = ({ seo, locale }) => {
                     <Box w="100%" mb={24}>
                         <SliderImage datas={dataCuisine} />
                     </Box>
-                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data.attributes.kitchenDesc}</Text>
+                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data?.attributes.kitchenDesc}</Text>
                 </>
             }
             <ByLuxuriaCard locale={locale} />

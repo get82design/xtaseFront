@@ -123,7 +123,7 @@ export const Nav = () => {
                                 type="button"
                                 spacing={2}
                                 bgColor={"white"}
-                                p={3}
+                                p={3} color="black"
                                 mr={-10}
                                 onClick={onTest}
                             >
@@ -203,8 +203,8 @@ export const Nav = () => {
                                         ml={{base:-4, lg:-12, xl:-12}}
                                         src="/images/logoColor.png"
                                         // style={{ width: "269px", height: "132px" }}
-                                        width={"135px"}
-                                        height={"66px"}
+                                        width={135}
+                                        height={66}
                                         alt="Logo Xtase by Luxuria"
                                     />
                                     <Image
@@ -212,8 +212,8 @@ export const Nav = () => {
                                         ml={{base:-4, lg:-12, xl:-12}}
                                         src="/images/logoColor.png"
                                         // style={{ width: "269px", height: "132px" }}
-                                        width={"200px"}
-                                        height={"103px"}
+                                        width={200}
+                                        height={103}
                                         alt="Logo Xtase by Luxuria"
                                     />
                                 </Flex>
