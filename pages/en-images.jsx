@@ -150,10 +150,10 @@ const EnImages = ({ seo, locale }) => {
             }
             {(loadChambre && dataChambre) &&
                 <>
-                    <Box w="100%" mb={24}>
+                    <Box w="100%" mb={4}>
                         <SliderImage datas={dataChambre} />
                     </Box>
-                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data?.attributes.bedroomDesc}</Text>
+                    <Text mb={24} fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align={{base: "left", md:"center"}} p="8">{data?.attributes.bedroomDesc}</Text>
                 </>
             }
             {( loadSalon && isLoadingSalon) &&
@@ -163,10 +163,10 @@ const EnImages = ({ seo, locale }) => {
             }
             {(loadSalon && dataSalon) &&
                 <>
-                    <Box w="100%" mb={24}>
+                    <Box w="100%" mb={4}>
                         <SliderImage datas={dataSalon} />
                     </Box>
-                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data?.attributes.chambreDesc}</Text>
+                    <Text mb={24} fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align={{base: "left", md:"center"}} p="8">{data?.attributes.livingRoomDesc}</Text>
                 </>
             }
             {( loadSalleDeBain && isLoadingSalleDeBain) &&
@@ -176,10 +176,10 @@ const EnImages = ({ seo, locale }) => {
             }
             {(loadSalleDeBain && dataSalleDeBain) &&
                 <>
-                    <Box w="100%" mb={24}>
+                    <Box w="100%" mb={4}>
                         <SliderImage datas={dataSalleDeBain} />
                     </Box>
-                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data?.attributes.bathroomDesc}</Text>
+                    <Text mb={24} fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align={{base: "left", md:"center"}} p="8">{data?.attributes.bathroomDesc}</Text>
                 </>
             }
             {( loadCuisine && isLoadingCuisine) &&
@@ -189,10 +189,10 @@ const EnImages = ({ seo, locale }) => {
             }
             {(loadCuisine && dataCuisine) &&
                 <>
-                    <Box w="100%" mb={24}>
+                    <Box w="100%" mb={4}>
                         <SliderImage datas={dataCuisine} />
                     </Box>
-                    <Text fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align="center" p="8">{data?.attributes.kitchenDesc}</Text>
+                    <Text mb={24} fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align={{base: "left", md:"center"}} p="8">{data?.attributes.kitchenDesc}</Text>
                 </>
             }
             <ByLuxuriaCard locale={locale} />

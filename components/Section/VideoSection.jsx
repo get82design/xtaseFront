@@ -11,10 +11,10 @@ export const VideoSection = ({ data }) => {
     const [showTitle, setShowTitle] = useState(true)
     const {isOpen, onOpen, onClose} = useDisclosure()
     // const refVideo = useRef(null)
-    // const play = (e) => {
-    //     onOpen()
-    //     refVideo.current.play()
-    // }
+    const play = (e) => {
+        onOpen()
+        // refVideo.current.play()
+    }
     return (
         <>
             <Box w="100%" px={0} my={{ base: 8, md: 24 }} position="relative">
@@ -76,7 +76,7 @@ export const VideoSection = ({ data }) => {
                     <ModalOverlay />
                     <ModalContent p={0}>
                         <ModalBody p={0}>
-                            <video style={{ base: {width:'100%', height:"60vh", opacity:'0.6'}, md:{width:'100%', height:"100vh", opacity:'0.6'}}}  autoPlay playsInline controls loop>
+                            <video style={{ base: {width:'100%', height:"100vh", opacity:'0.6'}, md:{width:'100%', height:"100vh", opacity:'0.6'}}}  autoPlay playsInline controls loop>
                                 <source src={getStrapiMedia(data?.videoBg)} type="video/mp4" />
                             </video>
                         </ModalBody>
