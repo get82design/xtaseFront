@@ -166,7 +166,7 @@ const EnImages = ({ seo, locale }) => {
                     <Box w="100%" mb={4}>
                         <SliderImage datas={dataSalon} />
                     </Box>
-                    <Text mb={24} fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align={{base: "left", md:"center"}} p="8">{data?.attributes.livingRoomDesc}</Text>
+                    <Text mb={24} fontFamily={"proxima-nova"} letterSpacing={"wider"} fontWeight={'light'} fontSize='xl' color="white" align={{base: "left", md:"center"}} p="8">{data?.attributes.chambreDesc}</Text>
                 </>
             }
             {( loadSalleDeBain && isLoadingSalleDeBain) &&

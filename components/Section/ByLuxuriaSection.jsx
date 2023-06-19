@@ -11,7 +11,7 @@ const MotionHeading = motion(Heading)
 const MotionButton = motion(Button)
 const MotionText = motion(Text)
 
-export const ByLuxuriaSection = ({ data }) => {
+export const ByLuxuriaSection = ({ data, locale }) => {
     const { urlReservation } = useContext(GlobalContext);
     const { setOpenDialog } = useDialogContext()
     const refHeight = useRef(null)
@@ -76,7 +76,7 @@ export const ByLuxuriaSection = ({ data }) => {
                             : setOpenDialog(true)
                         }>
                         <HStack spacing="3" position="relative">
-                            <Text color="#D7A989">RESERVER</Text>
+                            <Text color="#D7A989">{locale && locale !== 'fr-FR' ? 'BOOK NOW' : 'RESERVER'}</Text>
                             <Box _groupHover={{opacity:0}} transition="opacity 0.5s">
                                 <MotionBox mt="-1"
                                     initial={{x:0}}

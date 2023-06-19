@@ -6,7 +6,7 @@ import { getStrapiMedia } from "../../lib/media"
 const MotionBox = motion(Box)
 const MotionHeading = motion(Heading)
 
-export const ContactHeading = ({ data }) => {
+export const ContactHeading = ({ data, locale }) => {
     return (
         <Flex w='100%' justifyContent={"center"}>
             <Box
@@ -68,7 +68,7 @@ export const ContactHeading = ({ data }) => {
                                     backgroundColor:"rgba(255, 255, 255, 0.15)",
                                     border: "1px solid #D7A989",
                                 }}
-                            >Discutons</Button>
+                            >{locale && locale !== 'fr-FR' ? "Let's discuss" : 'Discutons'}</Button>
                         </MotionBox>
                         <MotionHeading
                             initial={{ scale: 0, filter:"blur(10px)" }}

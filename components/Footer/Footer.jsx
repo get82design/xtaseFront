@@ -67,7 +67,7 @@ export const Footer = ({ locale }) => {
                     return (
                         <a
                             key={social.id}
-                            href={social.attributes.label || "#"}
+                            href={social.attributes.href || "#"}
                             target="_blank"
                         >
                             <Text

@@ -94,7 +94,7 @@ export const Concept = ({data}) => {
                             role="group"
                         >
                             <HStack spacing="3" position="relative">
-                                <Text color="#D7A989">EN SAVOIR PLUS</Text>
+                                <Text color="#D7A989">{locale && locale !== 'fr-FR' ? 'VIEW MORE' : 'EN SAVOIR PLUS'}</Text>
                                 <Box _groupHover={{opacity:0}} transition="opacity 0.5s">
                                     <MotionBox mt="-1"
                                         initial={{x:0}}

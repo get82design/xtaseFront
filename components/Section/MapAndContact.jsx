@@ -18,7 +18,6 @@ export const MapAndContact = ({locale}) => {
     const { messagerie } = useContext(GlobalContext);
     const { data: mapAndContact } = useGetMapAndContact(locale)
 
-
     const HeadingContact = ({mapAndContact}) => {
         return (
             <Stack w="100%">
@@ -49,53 +48,57 @@ export const MapAndContact = ({locale}) => {
                                 <MotionText
                                     initial={{ opacity: 0 }}
                                     whileInView={{ opacity: 1 }}
-                                    transition={{duration: 0.5}}
+                                    transition={{ duration: 0.5 }}
                                     viewport={{ once: true }}
                                     color="#D7A989"
                                 >Email</MotionText>
                                 <Link href={`mailto:${mapAndContact?.attributes.mail}`} target="_blank">
                                     <MotionText
-                                        initial={{ opacity: 0, x:40 }}
-                                        whileInView={{ opacity: 1, x:0 }}
-                                        transition={{duration: 0.5, delay:0.5}}
+                                        initial={{ opacity: 0, x: 40 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.5, delay: 0.5 }}
                                         viewport={{ once: true }}
                                         fontSize="xl">{mapAndContact?.attributes.mail}</MotionText>
                                 </Link>
                             </Stack>
-                            <Stack spacing={1}>
-                                <MotionText
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{duration: 0.5}}
-                                    viewport={{ once: true }}
-                                    color="#D7A989"
-                                >{locale && locale !== "fr-FR" ? "Phone" : "Téléphone"}</MotionText>
-                                <MotionText
-                                    initial={{ opacity: 0, x:40 }}
-                                    whileInView={{ opacity: 1, x:0 }}
-                                    transition={{duration: 0.5, delay:0.5}}
-                                    viewport={{ once: true }}
-                                    fontSize="xl"
-                                >{mapAndContact?.attributes.phone}</MotionText>
-                            </Stack>
-                            <Stack spacing={1}>
-                                <MotionText
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{duration: 0.5}}
-                                    viewport={{ once: true }}
-                                    color="#D7A989"
-                                >{locale && locale !== "fr-FR" ? 'Social Messenger' : 'Messager social'}</MotionText>
-                                <Link href={messagerie ? messagerie : "#"} target="_blank">
+                            {mapAndContact?.attributes.phone && mapAndContact?.attributes.phone !== " " &&
+                                <Stack spacing={1}>
+                                    <MotionText
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{duration: 0.5}}
+                                        viewport={{ once: true }}
+                                        color="#D7A989"
+                                    >{locale && locale !== "fr-FR" ? "Phone" : "Téléphone"}</MotionText>
                                     <MotionText
                                         initial={{ opacity: 0, x:40 }}
                                         whileInView={{ opacity: 1, x:0 }}
                                         transition={{duration: 0.5, delay:0.5}}
                                         viewport={{ once: true }}
                                         fontSize="xl"
-                                    >WhatsApp</MotionText>
-                                </Link>
-                            </Stack>
+                                    >{mapAndContact?.attributes.phone}</MotionText>
+                                </Stack>
+                            }
+                            {messagerie && messagerie !== "" &&
+                                <Stack spacing={1}>
+                                    <MotionText
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{duration: 0.5}}
+                                        viewport={{ once: true }}
+                                        color="#D7A989"
+                                    >{locale && locale !== "fr-FR" ? 'Social Messenger' : 'Messager social'}</MotionText>
+                                    <Link href={messagerie ? messagerie : "#"} target="_blank">
+                                        <MotionText
+                                            initial={{ opacity: 0, x:40 }}
+                                            whileInView={{ opacity: 1, x:0 }}
+                                            transition={{duration: 0.5, delay:0.5}}
+                                            viewport={{ once: true }}
+                                            fontSize="xl"
+                                        >WhatsApp</MotionText>
+                                    </Link>
+                                </Stack>
+                            }
                             <Stack spacing={1}>
                                 <Text color="#D7A989">{locale && locale !== "fr-FR" ? "Social networks" : "Réseaux sociaux"}</Text>
                                 <HStack spacing={2}>
@@ -152,7 +155,7 @@ export const MapAndContact = ({locale}) => {
                                     backgroundColor:"rgba(255, 255, 255, 0.15)",
                                     border: "1px solid #D7A989",
                                 }}
-                            >Discutons</Button>
+                            >{locale && locale !== 'fr-FR' ? "Let's discuss" : 'Discutons'}</Button>
                         </Link>
 
                         <Link href={`mailto:${mapAndContact?.attributes.mail}`} target="_blank">
@@ -167,7 +170,7 @@ export const MapAndContact = ({locale}) => {
                                     // fontWeight: 'light',
                                     textTransform: "uppercase",
                                 }}
-                            >Nous écrire</Button>
+                            >{locale && locale !== 'fr-FR' ? 'Write us' : 'Nous écrire'}</Button>
                         </Link>
                     </Stack>
                 </Box>

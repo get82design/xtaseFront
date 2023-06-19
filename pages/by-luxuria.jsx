@@ -23,7 +23,7 @@ const ByLuxuria = ({ seo, locale }) => {
       <>
         <ByLuxuriaHeading data={data} />
 
-        <ByLuxuriaSection data={data} />  
+        <ByLuxuriaSection data={data} locale={locale} />  
 
         <Box w="100%" h="100vh" bgImage={getStrapiMedia(data.attributes.bgImage)}></Box>
 
