@@ -45,6 +45,7 @@ const EnImages = ({ seo, locale }) => {
             </Flex>
         )
     }
+    
     return (
         <>
             <Seo seo={seo} />
