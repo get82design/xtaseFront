@@ -22,8 +22,8 @@ export const Contact = ({ seo, locale }) => {
         (result) => {
           // console.log(result.text);
           toast({
-            title: 'Message envoyé.',
-            description: "Votre message a bien été envoyé",
+            title: locale && locale !== 'fr-FR' ? 'Message sent.' : 'Message envoyé.',
+            description: locale && locale !== 'fr-FR' ? "Your message has been sent" : "Votre message a bien été envoyé",
             status: 'success',
             duration: 9000,
             isClosable: true,
@@ -32,8 +32,8 @@ export const Contact = ({ seo, locale }) => {
         (error) => {
           // console.log(error.text);
           toast({
-            title: "Problème lors de l'envoie du message.",
-            description: "Veuillez réessayer plus tard",
+            title: locale && locale !== 'fr-FR' ? "Problem while sending the message." : "Problème lors de l'envoie du message.",
+            description: locale && locale !== 'fr-FR' ? "please try again later" : "Veuillez réessayer plus tard",
             status: 'error',
             duration: 9000,
             isClosable: true,

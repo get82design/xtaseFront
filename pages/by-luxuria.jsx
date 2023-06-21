@@ -16,6 +16,7 @@ const ByLuxuria = ({ seo, locale }) => {
       </Flex>
     )
   }
+
   return (
     <>
       <Seo seo={seo} />

@@ -76,7 +76,7 @@ export const ByLuxuriaSection = ({ data, locale }) => {
                             : setOpenDialog(true)
                         }>
                         <HStack spacing="3" position="relative">
-                            <Text color="#D7A989">{locale && locale !== 'fr-FR' ? 'BOOK NOW' : 'RESERVER'}</Text>
+                            <Text color="#D7A989">{data?.attributes.buttonResa[0]?.label}</Text>
                             <Box _groupHover={{opacity:0}} transition="opacity 0.5s">
                                 <MotionBox mt="-1"
                                     initial={{x:0}}

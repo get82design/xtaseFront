@@ -16,6 +16,8 @@ const Home = ({ seo, locale }) => {
   const [localeInView, setLocaleInView] = useState(null)
   const { error, isLoading, data } = useGetHomepage(localeInView)
 
+  console.log('data', data?.attributes)
+
   useEffect(() => {
     if (locale) {
       setLocaleInView(locale)
